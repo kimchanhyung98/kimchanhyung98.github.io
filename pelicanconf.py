@@ -3,10 +3,12 @@ SITENAME = 'kimchanhyung98.github.io'
 SITEURL = ""
 
 PATH = "content"
+# ARTICLE_PATHS = ['pages']
 
 TIMEZONE = 'Asia/Seoul'
 
 DEFAULT_LANG = 'ko'
+DEFAULT_PAGINATION = 10
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -15,21 +17,30 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+THEME = "themes/elegant"
+THEME_STATIC_DIR = "theme"
+
 # Blogroll
 LINKS = (
-    ("Pelican", "https://getpelican.com/"),
-    ("Python.org", "https://www.python.org/"),
-    ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    ("You can modify those links in your config file", "#"),
+    ("GitHub", "https://github.com/kimchanhyung98"),
+    # ("You can modify those links in your config file", "#"),
 )
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
-    ("Another social link", "#"),
+    ("Contact", "https://chanhyung.kim"),
+    # ("You can add links in your config file", "#"),
 )
 
-DEFAULT_PAGINATION = 10
+STATIC_PATHS = [
+    "images",
+    "extra/CNAME",
+    "extra/robots.txt",
+]
+EXTRA_PATH_METADATA = {
+    "extra/CNAME": {"path": "CNAME"},
+    "extra/robots.txt": {"path": "robots.txt"},
+}
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
