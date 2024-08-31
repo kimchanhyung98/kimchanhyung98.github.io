@@ -1,8 +1,8 @@
 AUTHOR = 'kimchanhyung98'
 SITENAME = 'kimchanhyung98.github.io'
-SITEURL = ""
+SITEURL = ''
 
-PATH = "content"
+PATH = 'content'
 # ARTICLE_PATHS = ['pages']
 
 TIMEZONE = 'Asia/Seoul'
@@ -17,29 +17,29 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-THEME = "themes/elegant"
-THEME_STATIC_DIR = "theme"
+THEME = 'themes/elegant'
+THEME_STATIC_DIR = 'theme'
 
 # Blogroll
 LINKS = (
-    ("GitHub", "https://github.com/kimchanhyung98"),
-    # ("You can modify those links in your config file", "#"),
+    ('GitHub', 'https://github.com/kimchanhyung98'),
+    # ('You can modify those links in your config file', '#'),
 )
 
 # Social widget
 SOCIAL = (
-    ("Contact", "https://chanhyung.kim"),
-    # ("You can add links in your config file", "#"),
+    ('Contact', 'https://chanhyung.kim'),
+    # ('You can add links in your config file', '#'),
 )
 
 STATIC_PATHS = [
-    "images",
-    "extra/CNAME",
-    "extra/robots.txt",
+    'images',
+    'extra/CNAME',
+    'extra/robots.txt',
 ]
 EXTRA_PATH_METADATA = {
-    "extra/CNAME": {"path": "CNAME"},
-    "extra/robots.txt": {"path": "robots.txt"},
+    'extra/CNAME': {'path': 'CNAME'},
+    'extra/robots.txt': {'path': 'robots.txt'},
 }
 
 # Uncomment following line if you want document-relative URLs when developing
