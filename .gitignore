@@ -6,7 +6,6 @@ __pycache__/
 
 .Python
 build/
-output/
 develop-eggs/
 dist/
 downloads/
@@ -62,6 +61,7 @@ __pypackages__/
 .pyre/
 .pytype/
 cython_debug/
+/output
 
 # Environments
 .env
