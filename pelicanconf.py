@@ -1,7 +1,13 @@
+import os
+
 AUTHOR = 'kimchanhyung98'
 SITENAME = 'kimchanhyung98'
 SITESUBTITLE = 'kimchanhyung blog'
-SITEURL = 'https://kimchanhyung98.github.io'
+
+if os.environ.get("CONTEXT") == "production":
+    SITEURL = 'https://kimchanhyung98.github.io'
+else:
+    SITEURL = 'http://localhost:8000'
 
 PATH = 'content'
 
