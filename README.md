@@ -1,8 +1,11 @@
 # kimchanhyung98.github.io
 
+[Pelican](https://getpelican.com) + [Github Pages](https://pages.github.com)
+
 ### 패키지 설치
 
 ```shell
+brew install python@3.12
 pip install -r requirements.txt
 ```
 
