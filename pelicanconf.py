@@ -83,7 +83,7 @@ PROJECTS = [
     }, {
         'name': 'Linkedin',
         'url': 'https://www.linkedin.com/in/kimchanhyung98',
-        'description': '구인구직, 커리어 계발',
+        'description': '구인구직',
     }
 ]
 

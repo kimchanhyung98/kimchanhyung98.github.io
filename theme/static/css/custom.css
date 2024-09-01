@@ -1,7 +1,21 @@
-#landing-page {
+div.container-fluid {
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+div#landing-page {
     margin: 30px 0;
 }
 
-#recent-posts #allposts {
+h1#recent-posts a#allposts {
     font-size: 0.4em;
+}
+
+div.recent-posts-article a {
+    display: block;
+}
+
+div.recent-posts-article small.subtitle {
+    display: block;
+    margin-top: 5px;
 }
