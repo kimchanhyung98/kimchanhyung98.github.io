@@ -113,16 +113,20 @@
         <section id="article-sidebar" class="span2">
             {% include '_includes/post_stats.html' %}
             {% if article.date %}
-            <h4>Published</h4>
+            <h4>created</h4>
             {% set day = article.date.strftime('%d')|int %}
-            <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b') }} {{ day }} {{- article.date.strftime(', %Y') }}</time>
+            <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">
+                {{ article.date.strftime('%Y-%m-%d') }}
+            </time>
             {% endif %}
             {% include '_includes/last_updated.html' %}
             {% include '_includes/series.html' %}
             {% if article.category|trim|count > 0 %}
-            <h4>Category</h4>
+            <h4>category</h4>
             {% from '_includes/_defaults.html' import CATEGORIES_URL with context %}
-            <a class="category-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ category.slug }}-ref">{{ article.category }}</a>
+            <a class="category-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ category.slug }}-ref">
+                {{ article.category }}
+            </a>
             {% endif %}
             {% if article.tags and article.tags[0]|trim|count > 0 %}
             {% from '_includes/_defaults.html' import TAGS_URL with context %}
@@ -136,7 +140,7 @@
                 {% endfor %}
             </ul>
             {% endif %}
-            {% include '_includes/social_links.html' %}
+            {# {% include '_includes/social_links.html' %} #}
             {% from '_includes/mailchimp.html' import mailchimp with context %}
             {{ mailchimp(article) }}
             {% from '_includes/freelists.html' import freelists with context %}
