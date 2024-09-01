@@ -1,7 +1,7 @@
 AUTHOR = 'kimchanhyung98'
 SITENAME = 'kimchanhyung98'
 SITESUBTITLE = 'kimchanhyung blog'
-SITEURL = ''
+SITEURL = 'https://kimchanhyung98.github.io'
 
 PATH = 'content'
 
@@ -81,6 +81,5 @@ PROJECTS = [
     }
 ]
 
-DISQUS_FILTER = True
 UTTERANCES_FILTER = True
 COMMENTBOX_FILTER = True
