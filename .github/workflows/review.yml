@@ -18,7 +18,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # optional
           LANGUAGE: Korean
-          MODEL: gpt-4o-mini
+          MODEL: gpt-3.5-turbo  # gpt-4o-mini
           PROMPT: "코드를 검토하고 오류 또는 불규칙성이 있는지 확인해주세요."
           max_tokens: 10000
           MAX_PATCH_LENGTH: 10000
