@@ -110,10 +110,11 @@
                     {% endif %}
                 </a>
                 <div class="recent-posts-posted">
-                    posted in
-                    <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ article.category.slug }}-ref">{{ article.category }}</a>
+                    #{{ article.category }}
                     <div class="recent-posts-time">
-                        <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%Y-%m-%d') }}</time>
+                        <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">
+                            {{ article.date.strftime('%Y-%m-%d') }}
+                        </time>
                     </div>
                 </div>
                 {% if RECENT_ARTICLE_SUMMARY %}

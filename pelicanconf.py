@@ -1,7 +1,13 @@
+import os
+
 AUTHOR = 'kimchanhyung98'
 SITENAME = 'kimchanhyung98'
 SITESUBTITLE = 'kimchanhyung blog'
-SITEURL = ''
+
+if os.environ.get("CONTEXT") == "production":
+    SITEURL = 'https://kimchanhyung98.github.io'
+else:
+    SITEURL = 'http://localhost:8000'
 
 PATH = 'content'
 
@@ -77,10 +83,9 @@ PROJECTS = [
     }, {
         'name': 'Linkedin',
         'url': 'https://www.linkedin.com/in/kimchanhyung98',
-        'description': '구인구직, 커리어 계발',
+        'description': '구인구직',
     }
 ]
 
-DISQUS_FILTER = True
 UTTERANCES_FILTER = True
 COMMENTBOX_FILTER = True

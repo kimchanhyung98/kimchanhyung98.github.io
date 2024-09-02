@@ -1,6 +1,7 @@
 # Pelican: A static site generator, written in Python.
 pelican
 pelican[markdown]
+pelican-seo
 pelican-extended-sitemap
 
 # Markdown

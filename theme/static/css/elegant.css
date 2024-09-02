@@ -162,7 +162,7 @@ table.highlighttable tbody > tr:nth-child(odd) > td {
 /* Article */
 .article-content,
 div.recent-posts p {
-  font: 1.2em/1.6 "PT Serif", Georgia, "Times New Roman", Times, Serif;
+  /* font: 1.2em/1.6 "PT Serif", Georgia, "Times New Roman", Times, Serif; */
   text-align: justify;
 }
 .article-content {
@@ -176,11 +176,12 @@ div.recent-posts p {
   text-transform: none;
 }
 .article-content p {
-  margin: 20px 0;
+  margin: 3px 0;
 }
 .article-content ul:not(.related-posts-list):not(.articles-timeline) {
   font-size: inherit;
   list-style-type: disc;
+  margin: 0 0 10px 10px;
 }
 .article-content ul.related-posts-list {
   list-style-type: square;
@@ -192,7 +193,7 @@ div.recent-posts p {
 .article-content li {
   line-height: 1.7em;
   list-style-position: outside;
-  margin: 1px 0 1px 20px;
+  margin: 1px 0 1px 10px;
 }
 .article-content dl {
   font-size: inherit;
@@ -209,13 +210,20 @@ div.recent-posts p {
   font-size: inherit;
 }
 .page-header {
-  border-bottom: 2px solid maroon;
-  color: maroon;
+  border-bottom: 2px solid black;
+  color: black;
   margin: 10px 10px 20px;
   padding: 5px;
 }
 .page-header h1 {
   border: none;
+  line-height: 1em;
+}
+.page-header h1 small{
+  border: none;
+  display: block;
+  font-size: 0.5em;
+  margin-top: 5px;
   line-height: 1em;
 }
 ul.articles-timeline {

@@ -1,5 +1,6 @@
 Title: Example content
-Date: 2024-01-01 10:00
-Category: testing
+Subtitle: This is Example Subtitle
+Category: misc
+Date: 2024-09-01 10:00
 
 Example content
