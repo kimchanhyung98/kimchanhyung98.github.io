@@ -19,6 +19,6 @@ jobs:
           # optional
           LANGUAGE: Korean
           MODEL: gpt-4o  # gpt-3.5-turbo
-          PROMPT: "코드를 검토하고 오류 또는 불규칙성이 있는지 확인해주세요."
+          PROMPT: "주어진 문서의 내용에 오류가 있는지 확인해주세요."
           max_tokens: 4096
           MAX_PATCH_LENGTH: 10000
