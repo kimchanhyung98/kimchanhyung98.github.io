@@ -480,6 +480,7 @@ div.line-block div.line-block {
 div.figure,
 .article-content img {
   text-align: center;
+  margin-bottom: 20px;
 }
 div.figure img {
   width: 100%;
