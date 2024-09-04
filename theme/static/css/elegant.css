@@ -100,6 +100,9 @@ pre {
   word-break: normal;
   word-wrap: normal;
 }
+pre code {
+  white-space: inherit;
+}
 td.code .highlight pre {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
