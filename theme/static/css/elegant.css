@@ -163,10 +163,15 @@ table.highlighttable tbody > tr:nth-child(odd) > td {
     "Lucida Grande", "Lucida Sans", Arial, Sans-Serif;
 }
 /* Article */
+.article-content {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 .article-content,
 div.recent-posts p {
-  /* font: 1.2em/1.6 "PT Serif", Georgia, "Times New Roman", Times, Serif; */
-  text-align: justify;
+  /*font: 1.2em/1.6 "PT Serif", Georgia, "Times New Roman", Times, Serif;*/
+  /*text-align: justify;*/
 }
 .article-content {
   max-width: 50em;
