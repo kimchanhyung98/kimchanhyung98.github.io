@@ -217,6 +217,14 @@ div.recent-posts p {
 .article-content dt {
   font-size: inherit;
 }
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  margin: 20px 0 10px;
+}
 .page-header {
   border-bottom: 2px solid black;
   color: black;
