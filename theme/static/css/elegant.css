@@ -163,10 +163,15 @@ table.highlighttable tbody > tr:nth-child(odd) > td {
     "Lucida Grande", "Lucida Sans", Arial, Sans-Serif;
 }
 /* Article */
+.article-content {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 .article-content,
 div.recent-posts p {
-  /* font: 1.2em/1.6 "PT Serif", Georgia, "Times New Roman", Times, Serif; */
-  text-align: justify;
+  /*font: 1.2em/1.6 "PT Serif", Georgia, "Times New Roman", Times, Serif;*/
+  /*text-align: justify;*/
 }
 .article-content {
   max-width: 50em;
@@ -211,6 +216,14 @@ div.recent-posts p {
 }
 .article-content dt {
   font-size: inherit;
+}
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  margin: 20px 0 10px;
 }
 .page-header {
   border-bottom: 2px solid black;

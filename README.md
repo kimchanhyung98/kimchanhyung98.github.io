@@ -14,3 +14,9 @@ pip install -r requirements.txt
 ```shell
 pelican content --verbose
 ```
+
+### 로컬 서버 실행
+
+```shell
+pelican -rl
+```
