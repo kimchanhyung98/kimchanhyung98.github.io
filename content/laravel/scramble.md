@@ -3,12 +3,12 @@ Subtitle: Laravel OpenAPI Documentation Generator
 Category: laravel
 Date: 2024-04-02 00:00
 
-OpenAPI(Swagger) 문서를 작성하기 위해, [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger)나
-[swagger-php](https://github.com/zircote/swagger-php) 등 다양한 패키지를 시도하고 사용했었는데,
+OpenAPI(Swagger) 문서를 작성하기 위해, [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger){:target="_blank"}나
+[swagger-php](https://github.com/zircote/swagger-php){:target="_blank"} 등 다양한 패키지를 시도하고 사용했었는데,
 Scramble은 다른 패키지들과는 다르게 다른 주석이나 문서를 작성할 필요 없이 API 문서를 자동으로 생성해 준다.
 
-작년 [라라벨 뉴스](https://laravel-news.com/scramble-laravel-api-docs)에서 소개된 이후로 관심이 있어서
-최근에 [업데이트된 버전](https://scramble.dedoc.co/blog/scrambledrop-scramble-0100)을 확인하고 사용해보았다.
+작년 [라라벨 뉴스](https://laravel-news.com/scramble-laravel-api-docs){:target="_blank"}에서 소개된 이후로 관심이 있어서
+최근에 [업데이트된 버전](https://scramble.dedoc.co/blog/scrambledrop-scramble-0100){:target="_blank"}을 확인하고 사용해보았다.
 
 <details>
 <summary>#scrambledrop: Scramble 0.10.0</summary>
@@ -53,4 +53,11 @@ php artisan vendor:publish --provider="Dedoc\Scramble\ScrambleServiceProvider" -
 ### 확인
 
 - 리소스에 대한 모델을 찾을 수 없는 경우(ex. @mixin), 모든 필드는 `string` 타입으로 표시
-- [작동 원리](https://scramble.dedoc.co/developers/how-it-works)
+- [How it works](https://scramble.dedoc.co/developers/how-it-works){:target="_blank"}
+    - Scramble의 작동 원리를 순서대로 정리
+    - Gathering API routes : 라우트와 해당 컨트롤러를 분석하여 엔드포인트, Request와 Response를 확인
+    - Route to request documentation : Request를 문서화하기 위해, Validate(FormRequest)와 파라미터를 확인
+    - Route’s responses documentation : 
+        - Response를 문서화하기 위해, return type을 분석하고 성공 및 오류 응답을 확인
+        - 다양한 시나리오 및 예외를 확인하여 문서화
+    - Putting it all together : 분석한(수집된) 정보를 경로나 스키마를 알파벳 순으로 정렬하여, OpenAPI 문서로 변환 
