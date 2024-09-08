@@ -5,9 +5,9 @@ Date: 2024-04-02 00:00
 
 OpenAPI(Swagger) 문서를 작성하기 위해, [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger)나
 [swagger-php](https://github.com/zircote/swagger-php) 등 다양한 패키지를 시도하고 사용했었는데,
-Scramble은 다른 패키지들과는 다르게 다른 주석이나 문서를 작성할 필요없이 API 문서를 자동으로 생성해준다.
+Scramble은 다른 패키지들과는 다르게 다른 주석이나 문서를 작성할 필요 없이 API 문서를 자동으로 생성해 준다.
 
-작년 [라라벨 뉴스](https://laravel-news.com/scramble-laravel-api-docs)에서 소개된 이후로 관심을 가지고 있어서
+작년 [라라벨 뉴스](https://laravel-news.com/scramble-laravel-api-docs)에서 소개된 이후로 관심이 있어서
 최근에 [업데이트된 버전](https://scramble.dedoc.co/blog/scrambledrop-scramble-0100)을 확인하고 사용해보았다.
 
 <details>
@@ -37,7 +37,7 @@ php artisan vendor:publish --provider="Dedoc\Scramble\ScrambleServiceProvider" -
 
 ### 설정
 
-사용을 위해 몇가지 설정 `config/scramble.php`을 변경하고,
+사용을 위해 몇 가지 설정 `config/scramble.php`을 변경하고,
 개발이나 스테이징 서버에서도 문서를 확인할 수 있도록 `AppServiceProvider`에서 Gate를 설정한다.
 
 ![scramble config]({static}/images/laravel-scramble-config.png)
