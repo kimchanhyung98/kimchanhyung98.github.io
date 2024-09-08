@@ -2,7 +2,7 @@
 pelican
 pelican[markdown]
 pelican-seo
-pelican-extended-sitemap
+pelican-sitemap
 
 # Markdown
 markdown
