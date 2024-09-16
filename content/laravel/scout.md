@@ -62,10 +62,19 @@ php artisan migrate --seed 실행
 이제 애플리케이션이 Scout를 사용하여 검색할 수 있도록 설정한다.  
 (블로그에서는 algolia를 사용했지만, 개발 환경에서는 `collection`을 사용한다)
 
+Algolia를 사용하려면 `algoliasearch-client-php` 패키지를 설치하고, `.env` 파일에 Algolia의 인증 정보를 추가한다.
+
+```shell
+composer require algolia/algoliasearch-client-php
+```
+
 ```dotenv
 # .env
 
 SCOUT_DRIVER=algolia
+
+ALGOLIA_APP_ID=
+ALGOLIA_SECRET=
 ```
 
 생성한 Post 모델에 `Searchable` 트레이트를 추가하고 `toSearchableArray` 메서드를 정의한다.
