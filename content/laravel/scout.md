@@ -3,21 +3,23 @@ Subtitle: adding full-text search to Eloquent models
 Category: laravel
 Date: 2023-03-01 00:00
 
-간단한 스카우트 소개 ㅁㄴㅇㄹ
-유저랑 게시글로 간단한 예시 및 테스트 진행
+데이터 검색을 위한 패키지인 Scout에 대해 간단히 소개하고 설치 방법을 설명한다.
+유저와 게시글을 이용하여 간단한 예시와 테스트를 진행한다.
 
 ## Installation
 
-패키지 설치 및 설정 (필요 시, config 파일 수정)
+Composer를 사용하여 Scout를 설치하고, 설정 파일을 복사 및 수정한다.
 
 ```shell
 composer require laravel/scout
 php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider"
 ```
 
+`config/scout.php` 파일이 생성되고 프로젝트에 맞춰 필요한 설정을 수정한다.
+
 ## Create Models and Migrations
 
-Post 모델과 마이그레이션(시드와 팩토리도) 생성
+이제 Post 모델과 관련된 마이그레이션, 시드와 팩토리를 생성한다.
 
 ```shell
 php artisan make:model Post -m
@@ -49,22 +51,26 @@ public function definition(): array
 }
 ```
 
+설정이 완료되었다면 다음 명령어를 사용하여 마이그레이션을 진행하고 시더를 실행한다.
+
+```shell
 php artisan migrate --seed 실행
+```
 
 ## Configure the Application to use Laravel Scout
 
-사용할 스카우트 드라이버 설정
+이제 애플리케이션이 Scout를 사용하여 검색할 수 있도록 설정한다.
+(블로그에서는 algolia를 사용했지만, 개발 환경에서는 `collection`을 사용한다)
 
-```
+```dotenv
 # .env
-SCOUT_DRIVER=algolia  # 로컬 테스트 시, collection 사용
+
+SCOUT_DRIVER=algolia
 ```
 
-생성한 Post 모델에 Searchable과 toSearchableArray 추가하고  
-간단한 컨트롤러도 하나 추가
+생성한 Post 모델에 `Searchable` 트레이트를 추가하고 `toSearchableArray` 메서드를 정의한다.
 
 ```php
-# Post model
 class Post extends Model
 {
     use HasFactory, Searchable, SoftDeletes;
@@ -80,9 +86,11 @@ class Post extends Model
         ];
     }
 }
+```
 
+검색 기능을 테스트하기 위해 `PostController`를 생성하고 간단한 메서드를 추가한다.
 
-# PostController
+```php
 # php artisan make:controller PostController --invokable
 class PostController extends Controller
 {
@@ -95,15 +103,21 @@ class PostController extends Controller
         return response()->json(data: $posts);
     }
 }
+```
 
+컨트롤러를 사용할 수 있도록 라우트도 설정한다.
+
+```php
 # routes
 Route::get('/search', PostController::class);
 ```
 
 ## Search
 
+마지막으로, Scout 명령어를 사용하여 검색 인덱스를 생성하고 상태를 확인한다.
+
 ```shell
-php artisan scout:flush Post
+# php artisan scout:flush Post
 php artisan scout:import Post
 php artisan scout:status
 ```
