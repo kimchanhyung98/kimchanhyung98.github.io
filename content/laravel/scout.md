@@ -3,7 +3,7 @@ Subtitle: adding full-text search to Eloquent models
 Category: laravel
 Date: 2023-03-01 00:00
 
-데이터 검색을 위한 패키지인 Scout에 대해 간단히 소개하고 설치 방법을 설명한다.
+데이터 검색을 위한 패키지인 Scout에 대해 간단히 소개하고 설치 방법을 설명하고,  
 유저와 게시글을 이용하여 간단한 예시와 테스트를 진행한다.
 
 ## Installation
@@ -59,7 +59,7 @@ php artisan migrate --seed 실행
 
 ## Configure the Application to use Laravel Scout
 
-이제 애플리케이션이 Scout를 사용하여 검색할 수 있도록 설정한다.
+이제 애플리케이션이 Scout를 사용하여 검색할 수 있도록 설정한다.  
 (블로그에서는 algolia를 사용했지만, 개발 환경에서는 `collection`을 사용한다)
 
 ```dotenv
@@ -96,7 +96,7 @@ class PostController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $posts = Post::search($request->q)->
+        $posts = Post::search($request->q)
             ->orderBy('id', 'desc')
             ->simplePaginate($request->per_page ?? 10)
  
