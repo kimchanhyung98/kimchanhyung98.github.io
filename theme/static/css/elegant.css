@@ -9,6 +9,9 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  /*font-family: 'Nanum Gothic', sans-serif;*/
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",sans-serif;*/
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 div#content {
   flex: 1 0 auto;
@@ -21,7 +24,8 @@ footer {
   flex-direction: row;
   flex-shrink: 0;
   flex-wrap: wrap;
-  font: 0.8em Calibri, Tahoma, Arial, Sans-Serif;
+  /*font: 0.8em Calibri, Tahoma, Arial, Sans-Serif;*/
+  font-size: 0.8em;
   justify-content: flex-end;
   margin: 15px 0 0 0;
   min-height: 40px;
@@ -38,8 +42,7 @@ footer div#fpowered {
   margin-right: unset;
 }
 :lang(zh) {
-  font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei",
-    Helvetica, Arial, sans-serif;
+  /*font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Helvetica, Arial, sans-serif;*/
 }
 a {
   color: #3875d7;
@@ -49,8 +52,7 @@ hr {
 }
 /* site title */
 .site-name {
-  font-family: "Monaco", "Inconsolata", "Andale Mono", "Lucida Console",
-    "Bitstream Vera Sans Mono", "Courier New", Courier, Monospace;
+  /*font-family: "Monaco", "Inconsolata", "Andale Mono", "Lucida Console", "Bitstream Vera Sans Mono", "Courier New", Courier, Monospace;*/
 }
 /* Top navigation menu */
 .top-menu li a {
@@ -66,8 +68,7 @@ hr {
   text-shadow: 0 0;
 }
 .comment-count {
-  font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, Sans-Serif;
+  /*font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, Sans-Serif;*/
   font-size: 0.9em;
 }
 #comment_thread {
@@ -128,7 +129,7 @@ table.highlighttable tbody > tr:nth-child(odd) > td {
 }
 /* Tags */
 .list-of-tags {
-  font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;*/
   list-style: none;
   margin: 0;
   overflow: hidden;
@@ -155,12 +156,11 @@ table.highlighttable tbody > tr:nth-child(odd) > td {
   line-height: 28px;
 }
 .tag-title {
-  font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, Sans-Serif;
+  /*font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, Sans-Serif;*/
 }
 .articles-in-tag li {
-  font: 1.1em/1.6 "Trebuchet MS", Trebuchet, "Lucida Sans Unicode",
-    "Lucida Grande", "Lucida Sans", Arial, Sans-Serif;
+  /*font: 1.1em/1.6 "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, Sans-Serif;*/
+  font-size: 1.1em;
 }
 /* Article */
 .article-content {
@@ -171,6 +171,7 @@ table.highlighttable tbody > tr:nth-child(odd) > td {
 .article-content,
 div.recent-posts p {
   /*font: 1.2em/1.6 "PT Serif", Georgia, "Times New Roman", Times, Serif;*/
+  font-size: 1.2em;
   /*text-align: justify;*/
 }
 .article-content {
@@ -295,7 +296,8 @@ ul.list-articles-category {
 ul.list-articles-category li time {
   color: #8f8f8f;
   display: inline-block;
-  font: 0.9em "PT Sans", "Helvetica Neue", Arial, Sans-Serif;
+  /*font: 0.9em "PT Sans", "Helvetica Neue", Arial, Sans-Serif;*/
+  font-size: 0.9em;
   width: 7em;
 }
 a.category-link {
@@ -305,8 +307,7 @@ a.category-link:hover {
   text-decoration: none;
 }
 a.list-of-categories {
-  font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, Sans-Serif;
+  /*font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, Sans-Serif;*/
   font-size: 1.1em;
 }
 a.list-of-categories:hover {
@@ -321,8 +322,7 @@ ul.list-all-articles {
 }
 ul.list-all-articles li {
   border-bottom: 1px dotted #000;
-  font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, Sans-Serif;
+  /*font-family: "Trebuchet MS", Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, Sans-Serif;*/
   font-size: 1.1em;
   padding: 0.3em 0;
   overflow: auto;
@@ -330,7 +330,7 @@ ul.list-all-articles li {
 ul.list-all-articles li time {
   color: #aaa;
   float: right;
-  font-family: "PT Sans", "Helvetica Neue", Arial, Sans-Serif;
+  /*font-family: "PT Sans", "Helvetica Neue", Arial, Sans-Serif;*/
   font-size: 0.9em;
 }
 div.blog-archives h2 {
@@ -364,7 +364,8 @@ div.blog-archives time,
 div.recent-posts time,
 div.recent-posts-posted {
   color: #8f8f8f;
-  font: 0.9em "PT Sans", "Helvetica Neue", Arial, Sans-Serif;
+  /*font: 0.9em "PT Sans", "Helvetica Neue", Arial, Sans-Serif;*/
+  font-size: 0.9em;
 }
 div.recent-posts time {
   font-size: inherit;
@@ -467,7 +468,8 @@ a#allposts:hover {
 }
 .proj-desc {
   color: #999;
-  font: 0.9em "PT Sans", "Helvetica Neue", Arial, Sans-Serif;
+  /*font: 0.9em "PT Sans", "Helvetica Neue", Arial, Sans-Serif;*/
+  font-size: 0.9em;
 }
 /* reST specific rules*/
 .literal {
@@ -475,7 +477,7 @@ a#allposts:hover {
   border-radius: var(--border-radius);
   border: 1px solid #e1e1e8;
   color: #d14;
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  /*font-family: Monaco, Menlo, Consolas, "Courier New", monospace;*/
   font-size: 12px;
   padding: 2px 4px;
   white-space: nowrap;
@@ -485,8 +487,7 @@ div.line-block div.line-block {
 }
 /* Helper CSS classes */
 .amp {
-  font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua",
-    Serif;
+  /*font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Serif;*/
   font-style: italic;
 }
 /* Use following classes to add floating images to your post */
