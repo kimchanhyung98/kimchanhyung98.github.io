@@ -29,7 +29,7 @@ Require
 - php : ^8.1
 - laravel : ^10.x
 
-```php
+```shell
 composer require dedoc/scramble
 
 php artisan vendor:publish --provider="Dedoc\Scramble\ScrambleServiceProvider" --tag="scramble-config"
@@ -40,8 +40,36 @@ php artisan vendor:publish --provider="Dedoc\Scramble\ScrambleServiceProvider" -
 사용을 위해 몇 가지 설정 `config/scramble.php`을 변경하고,
 개발이나 스테이징 서버에서도 문서를 확인할 수 있도록 `AppServiceProvider`에서 Gate를 설정한다.
 
-![scramble config]({static}/images/laravel-scramble-config.png)
-![scramble gate]({static}/images/laravel-scramble-gate.png)
+```php
+// config/scramble.php
+use Dedoc\Scramble\Http\Middleware\RestrictedDocsAccess;
+
+return [
+    'api_path' => 'api',
+    'api_domain' => str_replace('http://', '', env('APP_URL')),
+    'export_path' => 'api.json',
+    'info' => [
+        'version' => env('API_VERSION', '0.0.1'),
+        'description' => '해당 API나 서비스에 대한 설명 작성',
+    ],
+```
+
+```php
+// app/Providers/AppServiceProvider.php
+
+use App\Models\User;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot(): void
+    {
+        Gate::define('viewApiDocs', function (User $user) {
+            return $user->email === 'admin@app.com';
+        });
+    }
+```
 
 ## 사용
 
@@ -57,7 +85,7 @@ php artisan vendor:publish --provider="Dedoc\Scramble\ScrambleServiceProvider" -
     - Scramble의 작동 원리를 순서대로 정리
     - Gathering API routes : 라우트와 해당 컨트롤러를 분석하여 엔드포인트, Request와 Response를 확인
     - Route to request documentation : Request를 문서화하기 위해, Validate(FormRequest)와 파라미터를 확인
-    - Route’s responses documentation : 
+    - Route’s responses documentation :
         - Response를 문서화하기 위해, return type을 분석하고 성공 및 오류 응답을 확인
         - 다양한 시나리오 및 예외를 확인하여 문서화
     - Putting it all together : 분석한(수집된) 정보를 경로나 스키마를 알파벳 순으로 정렬하여, OpenAPI 문서로 변환 
