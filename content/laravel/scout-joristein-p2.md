@@ -5,8 +5,8 @@ Date: 2023-03-10 00:00
 
 @joristein 게시글 번역 및 내용 정리
 
-- [Laravel Scout P2: drivers & limitations](https://medium.com/@joristein/laravel-scout-full-text-search-p2-limitations-drivers-builder-46aef7f03cf5)
-    - [Elastic Search는 별도](https://laravel-news.com/explorer)
+- [Laravel Scout P2: drivers & limitations](https://medium.com/@joristein/laravel-scout-full-text-search-p2-limitations-drivers-builder-46aef7f03cf5){:target="_blank"}
+    - [Elastic Search는 별도](https://laravel-news.com/explorer){:target="_blank"}
 
 ---
 

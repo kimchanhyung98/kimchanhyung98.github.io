@@ -5,8 +5,8 @@ Date: 2023-03-11 00:00
 
 @joristein 게시글 번역 및 내용 정리
 
-- [Laravel Scout P3: combining search, filter and ordering](https://medium.com/@joristein/part-3-laravel-scout-full-text-search-p3-combining-search-filter-and-ordering-f7a0c5558f3f)
-- [Pagination with subquery broken](https://github.com/laravel/scout/issues/450)
+- [Laravel Scout P3: combining search, filter and ordering](https://medium.com/@joristein/part-3-laravel-scout-full-text-search-p3-combining-search-filter-and-ordering-f7a0c5558f3f){:target="_blank"}
+- [Pagination with subquery broken](https://github.com/laravel/scout/issues/450){:target="_blank"}
 
 ---
 
@@ -112,7 +112,7 @@ class Invoice extends Model
 
 검색 엔진을 구현하는 방법에 따라 데이터베이스에서 데이터를 필터링하고 싶을 수 있습니다.
 Scout를 사용하면 기본적으로 Eloquent 인스턴스에 접근할 수 없게 되지만, ->query(...) 메서드를 사용하여 다시 Eloquent 빌더에 접근할 수 있습니다.
-[#](https://laravel.com/docs/9.x/scout#customizing-the-eloquent-results-query)
+[#](https://laravel.com/docs/9.x/scout#customizing-the-eloquent-results-query){:target="_blank"}
 
 ```php
 use Illuminate\Database\Eloquent\Builder;
