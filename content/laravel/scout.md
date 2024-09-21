@@ -132,5 +132,5 @@ php artisan scout:status
 
 ### ref
 
-- https://laravel.com/docs/master/scout
-- https://laravel-news.com/laravel-scout-practical-guide
+- [laravel-docs:scout](https://laravel.com/docs/master/scout){:target="_blank"}
+- [laravel-news:scout practical guide](https://laravel-news.com/laravel-scout-practical-guide){:target="_blank"}
