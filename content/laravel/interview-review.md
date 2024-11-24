@@ -132,23 +132,51 @@ Date: 2024-08-20 00:00
 
 #### 주로 어떤 기술이나 언어를 선호하고 어떤 버전을 사용하고 있나요?
 
+- PHP(Laravel)를 주로 사용하며, 가능한 최신 버전을 사용 (PHP 8.2, Laravel 11)
+- JS로 시작하여 Python, Go 등을 사용해 본 경험도 있음
+
 #### 언어나 프레임워크의 버전을 업그레이드하며 발생했던 문제와 해결 방법을 말씀해주세요.
 
-#### Modern PHP와 PSR 표준에 대해 이해하고 계신가요?
+- PHP 5.x -> 7.x 업그레이드 시, 변경된 함수 문제 및 CentOS 라이브러리 문제
+- 그 이후에는 프레임워크(Laravel) 사용 및 테스트 작성으로 업그레이드 관련 문제가 거의 발생하지 않음
+
+#### Modern PHP와 PSR에 대해 이해하고 계신가요?
+
+- Modern PUG와 PHP THE RIGHT WAY 확인
+- 최근 PSR을 준수하고 PER 확인하며 사내 코드 스타일을 정하거나 PHP 패키지를 제작
 
 #### Xdebug 같은 디버깅 도구를 사용하신 경험이 있으신가요? 사용하신다면 어떤 방식으로 사용하셨나요?
 
+- Xdebug는 사용해보지 않았으나, debugbar나 clockwork 사용 경험이 있음
+- 간단한 디버깅은 Laravel의 dd()나 Log 기능 사용
+
 #### Laravel이 어떻게 동작하는지, 라이프사이클을 알고 계신가요?
+
+- 최근 Laravel HTTP 동작 방식을 확인하며 라이프사이클도 확인함
+- index.php, kernel, provider, routes, middleware 등
 
 #### Eloquent ORM에 대해 알고 계신 내용을 자유롭게 설명해주세요.
 
+- Eloquent와 Model, Relationship, Collection 등을 활용한 경험
+- 무조건 Eloquent만을 사용하지 않고, 성능 최적화를 위해 Query Builder와 적절히 조합
+
 #### ORM과 Query Builder를 사용해 보셨다면, 차이점과 사용 경험을 말씀해주세요.
+
+- ORM은 생산성을 위해 간결하게 처리
+- Query Builder는 대규모 데이터나 성능 최적화가 필요한 경우 사용
 
 #### Mutator와 Accessor를 사용하신 경험이 있나요?
 
+- Mutator를 사용해 데이터 저장 전 포맷 변환, Accessor를 통해 클라이언트에 반환 시 데이터 가공 처리
+- 날짜 형식, 타입이나 암호화된 데이터 핸들링 사용 경험
+
 #### Eager Loading과 Lazy Loading의 차이점과 사용하며 겪었던 문제를 말씀해주세요.
 
+- Lazy Loading 사용 중 N+1 문제를 경험, Eager Loading으로 관계를 사전에 로드하여 해결
+
 #### (Laravel에서) 사용했던 패턴이나 구조에 대해 설명해주세요.
+
+- Service, Facade, Action 등을 활용
 
 ### DB
 
