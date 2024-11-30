@@ -1,6 +1,6 @@
 Title: Example content
 Subtitle: This is Example Subtitle
 Category: misc
-Date: 2024-09-01 10:00
+Date: 2000-01-01 00:00
 
 Example content

@@ -1,5 +1,5 @@
 Title: Scout: combining search, filter
-Subtitle: Filtering data with Search engine&Eloquent
+Subtitle: [번역] Filtering data with Search engine&Eloquent
 Category: laravel
 Date: 2023-03-11 00:00
 
