@@ -361,11 +361,15 @@ ul.list-articles-category {
 }
 
 ul.list-articles-category li time {
-    color: #8f8f8f;
+    color: #5d5d5d;
     display: inline-block;
     /*font: 0.9em "PT Sans", "Helvetica Neue", Arial, Sans-Serif;*/
     font-size: 0.9em;
     width: 7em;
+}
+
+ul.list-articles-category small {
+    color: #8f8f8f;
 }
 
 a.category-link {
