@@ -1,6 +1,6 @@
 Title: Interview Review
 Subtitle: PHP 백엔드 개발자 면접 후기
-Category: laravel
+Category: misc
 Date: 2024-08-20 00:00
 
 ## 면접 후기
