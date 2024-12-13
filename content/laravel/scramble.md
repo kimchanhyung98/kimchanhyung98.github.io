@@ -1,5 +1,5 @@
 Title: Scramble
-Subtitle: Laravel OpenAPI Documentation Generator
+Subtitle: OpenAPI 문서 생성기
 Category: laravel
 Date: 2024-04-02 00:00
 

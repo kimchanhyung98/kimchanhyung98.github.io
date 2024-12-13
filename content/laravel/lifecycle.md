@@ -1,5 +1,5 @@
-Title: Illuminate/Http/Request
-Subtitle: Laravel lifecycle
+Title: Http Request lifecycle
+Subtitle: 요청 라이프 사이클 확인하기
 Category: laravel
 Date: 2024-05-01 00:00
 
