@@ -1,18 +1,18 @@
-Title: Illuminate/Http/Request
-Subtitle: Laravel lifecycle
+Title: Laravel lifecycle
+Subtitle: Laravel lifecycle 문서 확인
 Category: laravel
 Date: 2024-05-01 00:00
 
 ### What happened?
 
 토이프로젝트를 진행하는 중 프론트 개발자가 실수로 Body와 Param을 둘 다 전달했다.  
-Body, Param 모두 동일하게 입력을 받을 텐데 Laravel이 어떤 값을 어디서 먼저 처리하는지가 궁금하여, 프레임워크의 동작 방식을 알아보고 Illuminate/Http/Request를 확인해 보았다.
+Body, Param 모두 동일하게 입력을 받을 텐데 Laravel이 어떤 값을 어디서 먼저 처리하는지가 궁금하여, 프레임워크의 동작 방식을 알아보고 Illuminate/Http/Request를 자세히 확인해 보았다.
 
 ## [Request Lifecycle](https://laravel.com/docs/master/lifecycle)
 
 어떤 도구를 사용할 때, 그 도구의 동작 방식을 이해하면 더 효율적으로 사용할 수 있는 것 처럼  
 애플리케이션 개발도 마찬가지로, Laravel 프레임워크의 내부 동작 방식을 이해하고 Request 처리 과정을 확인하면     
-프레임워크를 사용하는데 더 편리하고, 빠르게 개발할 수 있을 것이다. (아마도)
+프레임워크를 사용하는데 더 편리하고, 빠르게 개발할 수 있을 것이다. (아마도...)
 
 ### index.php
 
@@ -212,4 +212,4 @@ function join_paths($basePath, ...$paths)
 컨트롤러(혹은 라우트)가 반환한 응답(Response)은 다시 미들웨어를 통해 전달, 애플리케이션이 Response를 수정할 수 있는 기회를 준다.  
 마지막으로, HTTP 커널은 Response를 애플리케이션 인스턴스에 반환하고 `send` 메서드를 호출하여 Response를 사용자에게 전송한다.
 
-## todo
+- [laravel-request-lifecycle](https://medium.com/@ankitatejani84/laravel-request-lifecycle-7c2145aa1257), [learning-the-lifecycle-of-laravel](https://medium.com/@nisma.hossain.41982/learning-the-lifecycle-of-laravel-4e674e176d34)
