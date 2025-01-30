@@ -1,41 +1,33 @@
-Title: Laravel lifecycle 2
+Title: Laravel HTTP Request
 Subtitle: Illuminate/Http/Request 확인하기
 Category: laravel
 Date: 2024-05-02 00:00
 
 ## Details
 
-### [laravel docs](https://laravel.com/docs/11.x/requests)
-
-당연하지만 lifecycle 문서에도 Request 클래스에 대한 자세한 내용은 없다.  
+[Lifecycle](https://chanhyung.kim/w/laravel-lifecycle)을 확인해 보았으나, Request 클래스에 대한 자세한 내용은 없다.  
 'Illuminate\Http\Request 인스턴스는 애플리케이션에 유입되는 HTTP 요청을 검사하기 위해,
-다양한 메소드를 제공하고 Symfony\Component\HttpFoundation\Request 클래스를 상속한다'는 정도가 전부이다.
+다양한 메소드를 제공하고 Symfony\Component\HttpFoundation\Request 클래스를 상속한다'는 정도.
 
-### [laravel api](https://laravel.com/api/master/Illuminate/Http/Request.html)
-
-API 문서를 확인하면 docs보다는 자세하게 Request 클래스의 메소드와 속성을 확인할 수 있고, View source를 통해 소스 코드를 확인할 수 있다.
-
+- API 문서를 확인하면 docs보다는 자세하게 Request 클래스의 메소드와 속성을 확인할 수 있고, View source를 통해 코드를 확인할 수 있다.
+    - [laravel api](https://laravel.com/api/master/Illuminate/Http/Request.html)
 - 프로젝트를 진행한다면 실제 경로는 vendor/laravel/framework/src/Illuminate/Http/Request.php
-
-### Input
-
-Params
-
-- name = 테스트1
-- nickname = tester1
-- email = tester1@example.com
-- password = Password1!@
-
-Body
-
-- name = 테스트2
-- nickname = tester2
-- email = tester2@example.com
-- password = Password2@#
 
 ### [Source](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Request.php)
 
-관련 코드를 순서대로 확인해보고, 로그를 추가하여 Request 처리 과정을 확인해보자.
+```http request
+POST http://localhost/test-api?name=테스트1&nickname=tester1&email=tester1@example.com&password=Password1!@
+Content-Type: application/json
+
+{
+  "name": "테스트2",
+  "nickname": "tester2",
+  "email": "tester2@example.com",
+  "password": "Password2@#"
+}
+```
+
+관련 코드를 순서대로 확인해보고, 임의의 입력과 로그를 추가하여 Request 처리 과정을 확인해보자.
 
 ```php
 [public/index.php]

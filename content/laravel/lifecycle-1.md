@@ -1,12 +1,13 @@
 Title: Laravel lifecycle
-Subtitle: Laravel lifecycle 문서 확인
+Subtitle: 라라벨 라이프사이클 확인하기
 Category: laravel
 Date: 2024-05-01 00:00
 
 ### What happened?
 
-토이프로젝트를 진행하는 중 프론트 개발자가 실수로 Body와 Param을 둘 다 전달했다.  
-Body, Param 모두 동일하게 입력을 받을 텐데 Laravel이 어떤 값을 어디서 먼저 처리하는지가 궁금하여, 프레임워크의 동작 방식을 알아보고 Illuminate/Http/Request를 자세히 확인해 보았다.
+토이프로젝트를 진행하는 중 프론트엔드 개발자가 실수로 Body와 Param을 둘 다 전달했다.  
+Body, Param 모두 동일하게 입력을 받을 텐데 라라벨 프레임워크가 어떤 값을 어디서 어떻게 처리하는지가 궁금하여, 
+프레임워크의 동작 방식을 알아보고 Illuminate/Http/Request를 자세히 확인해 보았다.
 
 ## [Request Lifecycle](https://laravel.com/docs/master/lifecycle)
 
