@@ -215,10 +215,10 @@ Date: 2024-08-20 00:00
 
 ## 기타
 
-#### 객체지향 프로그래밍과 객체라는 개념에 대해 설명해주세요.
+#### linkedin, collaborative articles
 
-- [OOP란...](https://www.inflearn.com/community/questions/868112/oop-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94?focusComment=265243)
-
-#### 추상화란 무엇이라고 생각하고, 어떤 의미가 있나요?
-
-#### 본인이 생각하는 이상적인 디자인 패턴과 이유를 설명해주세요.
+- [Computer Science](https://www.linkedin.com/pulse/topics/engineering-s166/computer-science-s1541/) 
+- [Programming](https://www.linkedin.com/pulse/topics/engineering-s166/programming-s698/)
+- [Software Engineering](https://www.linkedin.com/pulse/topics/engineering-s166/software-development-s602/)
+- [Web Development](https://www.linkedin.com/pulse/topics/engineering-s166/web-development-s764/)
+- [AI](https://www.linkedin.com/pulse/topics/engineering-s166/artificial-intelligence-(ai)-s2407/)
