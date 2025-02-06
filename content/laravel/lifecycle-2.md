@@ -15,7 +15,7 @@ Date: 2024-05-02 00:00
 
 ### [Source](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Request.php)
 
-```http request
+```http
 POST http://localhost/test-api?name=테스트1&nickname=tester1&email=tester1@example.com&password=Password1!@
 Content-Type: application/json
 
@@ -38,7 +38,7 @@ Content-Type: application/json
 ```
 
 <!-- trace: public/index.php (here) → Illuminate/Http/Request.php : capture() -->
-이전에 확인했던 라라벨의 라이프 사이클을 토대로, public/index.php에서 Request capture로 연결되는 것을 확인
+이전에 확인했던 라라벨의 라이프 사이클을 토대로, public/index.php에서 Request capture로 연결되는 것을 확인  
 
 ```php
 [Illuminate/Http/Request.php]
@@ -106,7 +106,7 @@ public static function createFromGlobals(): static
 ```
 
 <!-- trace: Illuminate/Http/Request.php → symfony/http-foundation/Request.php : createFromGlobals() (here) -->
-이어서 enableHttpMethodParameterOverride를 확인하고 SymfonyRequest의 createFromGlobals도 확인
+이어서 enableHttpMethodParameterOverride를 확인하고 SymfonyRequest의 createFromGlobals도 확인  
 
 <details>
 <summary>symfony/http-foundation/Request.php → dump createFromGlobals</summary>
@@ -227,7 +227,7 @@ Symfony\Component\HttpFoundation\Request {#34
 }
 ```
 
-</details>
+</details>  
 
 ```php
 [Illuminate/Http/Request.php]
@@ -262,7 +262,7 @@ public static function createFromBase(SymfonyRequest $request)
 ```
 
 <!-- trace: Illuminate/Http/Request.php → symfony/http-foundation/Request.php : createFromBase() (here) -->
-capture → createFromBase를 거치면서 body가 추가되는 것을 확인
+capture → createFromBase를 거치면서 body가 추가되는 것을 확인  
 
 <details>
 <summary>Illuminate/Http/Request.php → dump 1st log</summary>
@@ -275,7 +275,7 @@ Symfony\Component\HttpFoundation\InputBag {#35
 }
 ```
 
-</details>
+</details>  
 
 <details>
 <summary>Illuminate/Http/Request.php → dump 2st log</summary>
@@ -296,7 +296,7 @@ public function isJson()
 }
 ```
 
-</details>
+</details>  
 
 ```php
 [Illuminate/Foundation/Application.php]
@@ -320,7 +320,7 @@ public function handleRequest(Request $request)
 ```
 
 Request::capture()가 생성한 Symfony\Component\HttpFoundation\Request 인스턴스를 handleRequest 메소드로 전달  
-해당 값(request)을 전달받은 handleRequest는 body, param 값이 모두 있는 것도 확인
+해당 값(request)을 전달받은 handleRequest는 body, param 값이 모두 있는 것도 확인  
 
 <details>
 <summary>Illuminate/Foundation/Application.php → dump handleRequest</summary>
@@ -457,7 +457,7 @@ Illuminate\Http\Request {#42
 }
 ```
 
-</details>
+</details>  
 
 ## Summary
 
