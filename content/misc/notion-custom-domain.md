@@ -1,11 +1,11 @@
-Title: Cloudflare,Notion custom domain
+Title: Notion custom domain
 Subtitle: 클라우드플레어를 이용한 노션 커스텀 도메인 설정
 Category: misc
 Date: 2024-05-15 00:00
 
 ## 노션 커스텀 도메인 설정
 
-노션 커스텀 도메인을 설정할 때, 짧고 쉬운 가이드를 찾기 힘들어 간단하게 정리하였다.
+노션 커스텀 도메인을 설정할 때, 클라우드플레어를 사용하는 짧고 쉬운 가이드를 찾기 힘들어 간단하게 정리하였다.
 
 ![notion-publish]({static}/images/notion-publish.png)  
 우선 노션 페이지를 공개(게시) 처리하고
@@ -87,4 +87,10 @@ async function fetchAndApply(request) {
 ```
 
 ![cloudflare-worker]({static}/images/notion-cloudflare-worker.png)  
-이제 설정한 도메인과 notion-worker를 등록하면, 해당 도메인으로 접속이 가능하다.  
+이제 설정한 도메인과 notion-worker를 등록하면, 해당 도메인으로 접속이 가능하다.
+
+## 기타
+
+- DNS 전파에는 시간이 걸릴 수 있으니, 여유있게 테스트 해보세요.
+- 도메인이나 워커 스크립트 내의 URL을 수정해주세요.
+- 검색 엔진 인덱싱을 허용하여도 수집이 되지 않을 수 있습니다.
