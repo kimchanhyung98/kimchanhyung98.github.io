@@ -1,11 +1,11 @@
-Title: Notion&Cloudflare custom domain
+Title: Cloudflare,Notion custom domain
 Subtitle: 클라우드플레어를 이용한 노션 커스텀 도메인 설정
 Category: misc
 Date: 2024-05-15 00:00
 
 ## 노션 커스텀 도메인 설정
 
-노션을 커스텀 도메인으로 설정하고 싶지만, 짧고 쉬운 가이드를 찾기 힘들어 간단하게 정리하였다.
+노션 커스텀 도메인을 설정할 때, 짧고 쉬운 가이드를 찾기 힘들어 간단하게 정리하였다.
 
 ![notion-publish]({static}/images/notion-publish.png)  
 우선 노션 페이지를 공개(게시) 처리하고
