@@ -1,14 +1,14 @@
 Title: ip Address to Integer
-Subtitle: IP 주소 변환 함수 (inet_aton, inet_ntoa)
+Subtitle: MySQL IP 주소 변환 함수 (inet_aton, inet_ntoa)
 Category: database
 Date: 2024-01-01 00:00
 
-MySQL에서는 IP 주소를 다룰 때 유용한 함수들을 제공하며, 그 중 IPv4 및 IPv6 주소를 변환해주는 INET 함수를 확인해보자.
+MySQL에서는 IP 주소를 다룰 때 유용한 함수들을 제공하며, 그 중 IPv4 및 IPv6 주소를 변환해주는 INET 함수를 확인해보자.  
 
 ## INET_ATON(_expr_)
 
 IPv4 네트워크 주소를 문자열로 제공하면 네트워크 바이트 순서([Big Endian](https://www.tcpschool.com/c/c_refer_endian))로 주소의 숫자 값을 나타내는 정수를 반환하고,
-인수가 정상적이지 않거나 NULL인 경우 NULL을 반환한다.
+인수가 정상적이지 않거나 NULL인 경우 NULL을 반환한다.  
 
 ```shell
 mysql> SELECT INET_ATON('10.0.5.9');  
@@ -19,7 +19,7 @@ mysql> SELECT INET_ATON(null);
 ```
 
 변환하는 방법은 a.b.c.d 주소를 8비트씩 시프트하여 하나의 정수로 결합하는 것이다.  
-A = a * 256^3, B = b * 256^2, C = c * 256^1, D = d * 1(255^0) 로 계산하여 A+B+C+D를 반환한다.
+A = a * 256^3, B = b * 256^2, C = c * 256^1, D = d * 1(255^0) 로 계산하여 A+B+C+D를 반환한다.  
 
 ### 주의 사항
 
@@ -28,8 +28,8 @@ A = a * 256^3, B = b * 256^2, C = c * 256^1, D = d * 1(255^0) 로 계산하여 A
 
 ## INET_NTOA(_expr_)
 
-INET_ATON(ip Address to Number)의 역  
-네트워크 바이트 순서로 된 정수가 주어지면 IPv4 네트워크 주소를 반환하고, INET_ATON와 동일하게 인수가 정상적이지 않거나 NULL인 경우 NULL을 반환한다.
+INET_ATON(ip Address to Number)의 역.  
+네트워크 바이트 순서로 된 정수가 주어지면 IPv4 네트워크 주소를 반환하고, INET_ATON와 동일하게 인수가 정상적이지 않거나 NULL인 경우 NULL을 반환한다.  
 
 ```shell
 mysql> SELECT INET_NTOA(167773449);
@@ -37,8 +37,8 @@ mysql> SELECT INET_NTOA(167773449);
 ```
 
 변환하는 방법은 정수를 8비트씩 나눠서 각 옥텟을 추출하고, 점으로 구분된 문자열로 변환하는 것이다.  
-만약 [직접 변환](https://www.digikey.kr/ko/resources/conversion-calculators/conversion-calculator-number-conversion)하겠다면,
-정수를 2진수로 변환하고 8비트씩 나눠서 각 옥텟을 추출하고, 점으로 구분된 문자열로 변환한다.
+만약 [직접 변환](https://www.digikey.kr/ko/resources/conversion-calculators/conversion-calculator-number-conversion)하겠다면, 
+정수를 2진수로 변환하고 8비트씩 나눠서 각 옥텟을 추출하고, 점으로 구분된 문자열로 변환한다.  
 
 ## INET6_ATON(_expr_)
 
@@ -60,7 +60,7 @@ INET_ATON과 동일하게 인수가 정상적이지 않거나 NULL인 경우 NUL
 ## INET6_NTOA(_expr_)
 
 숫자 형태로 표현된 이진 문자열의 IPv6 또는 IPv4 네트워크 주소가 주어지면 연결 문자 집합의 문자열로 주소의 문자열 표현을 반환한다.
-인수가 정상적이지 않거나 NULL인 경우 NULL을 반환한다.
+인수가 정상적이지 않거나 NULL인 경우 NULL을 반환한다.  
 
 ```shell
 mysql> SELECT INET6_NTOA(INET6_ATON('fdfe::5a55:caff:fefa:9089'));
