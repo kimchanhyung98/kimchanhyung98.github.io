@@ -7,8 +7,8 @@ else:
     SITEURL = 'http://localhost:8000'
 
 AUTHOR = 'kimchanhyung98'
-SITENAME = 'kimchanhyung98'
-SITESUBTITLE = 'kimchanhyung blog'
+SITENAME = 'Chandlery'
+SITESUBTITLE = 'chanhyung.kim'
 
 DEFAULT_CATEGORY = 'misc'
 USE_FOLDER_AS_CATEGORY = False
