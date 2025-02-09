@@ -2,6 +2,7 @@ Title: Scout: combining search, filter
 Subtitle: [번역] Filtering data with Search engine&Eloquent
 Category: laravel
 Date: 2023-03-11 00:00
+Tags: scout, search, filter, eloquent
 
 @joristein 게시글 번역 및 내용 정리
 

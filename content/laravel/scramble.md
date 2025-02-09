@@ -2,6 +2,7 @@ Title: Scramble
 Subtitle: Laravel OpenAPI Documentation Generator
 Category: laravel
 Date: 2024-04-02 00:00
+Tags: scramble, openapi, swagger
 
 OpenAPI(Swagger) 문서를 작성하기 위해, [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger){:target="_blank"}나
 [swagger-php](https://github.com/zircote/swagger-php){:target="_blank"} 등 다양한 패키지를 시도하고 사용했었는데,

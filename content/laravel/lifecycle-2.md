@@ -2,6 +2,7 @@ Title: Laravel HTTP Request
 Subtitle: Illuminate/Http/Request 확인하기
 Category: laravel
 Date: 2024-05-02 00:00
+Tags: request, http, laravel
 
 ## Details
 

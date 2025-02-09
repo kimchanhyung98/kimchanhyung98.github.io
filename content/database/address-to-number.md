@@ -2,6 +2,7 @@ Title: ip Address to Integer
 Subtitle: IP 주소 변환 함수 (inet_aton, inet_ntoa)
 Category: database
 Date: 2024-01-01 00:00
+Tags: ip address, mysql
 
 MySQL에서는 IP 주소를 다룰 때 유용한 함수들을 제공하며, 그 중 IPv4 및 IPv6 주소를 변환해주는 INET 함수를 확인해보자.
 
