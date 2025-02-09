@@ -2,7 +2,7 @@ import os
 
 # Defaults
 if os.environ.get("CONTEXT") == "production":
-    SITEURL = 'https://kimchanhyung98.github.io'
+    SITEURL = 'https://chanhyung.kim'
 else:
     SITEURL = 'http://localhost:8000'
 
@@ -70,8 +70,8 @@ TRANSLATION_FEED_ATOM = None
 
 # Social
 SOCIAL = (
-    ('Contact', 'https://chanhyung.kim'),
-    ('Github', 'https://github.com/kimchanhyung98', 'Github Profile'),
+    ('gitHub', 'https://github.com/kimchanhyung98'),
+    ('linkedin', 'https://www.linkedin.com/in/kimchanhyung98'),
 )
 
 LINKS = (
