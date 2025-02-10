@@ -2,6 +2,7 @@ Title: Scout
 Subtitle: adding full-text search to Eloquent models
 Category: laravel
 Date: 2023-03-01 00:00
+Tags: scout, search, algolia
 
 데이터 검색을 위한 패키지인 Scout에 대해 간단히 소개하고 설치 방법을 설명하고,  
 유저와 게시글을 이용하여 간단한 예시와 테스트를 진행한다.

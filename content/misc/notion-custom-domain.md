@@ -2,6 +2,7 @@ Title: Notion custom domain
 Subtitle: 클라우드플레어를 이용한 노션 커스텀 도메인 설정
 Category: misc
 Date: 2024-05-15 00:00
+Tags: notion, cloudflare, domain, worker
 
 ## 노션 커스텀 도메인 설정
 

@@ -2,6 +2,7 @@ Title: Laravel lifecycle
 Subtitle: 라라벨 라이프사이클 확인하기
 Category: laravel
 Date: 2024-05-01 00:00
+Tags: lifecycle, request, http
 
 ### What happened?
 

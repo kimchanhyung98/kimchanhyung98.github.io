@@ -111,7 +111,7 @@
         <section id="article-sidebar" class="span2">
             {% include '_includes/post_stats.html' %}
             {% if article.date %}
-            <h4>created</h4>
+            <h4>Published</h4>
             {% set day = article.date.strftime('%d')|int %}
             <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">
                 {{ article.date.strftime('%Y-%m-%d') }}
@@ -120,7 +120,7 @@
             {% include '_includes/last_updated.html' %}
             {% include '_includes/series.html' %}
             {% if article.category|trim|count > 0 %}
-            <h4>category</h4>
+            <h4>Category</h4>
             {% from '_includes/_defaults.html' import CATEGORIES_URL with context %}
             <a class="category-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ category.slug }}-ref">
                 {{ article.category }}
