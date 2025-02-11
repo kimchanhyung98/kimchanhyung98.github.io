@@ -143,7 +143,7 @@ td.code {
 }
 
 div.highlight {
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 table.highlighttable {
@@ -204,6 +204,7 @@ table.highlighttable tbody > tr:nth-child(odd) > td {
 .article-content {
     word-break: keep-all;
     overflow-wrap: break-word;
+    max-width: 50em;
 }
 
 .article-content,
@@ -211,10 +212,6 @@ div.recent-posts p {
     /*font: 1.2em/1.6 "PT Serif", Georgia, "Times New Roman", Times, Serif;*/
     font-size: 1.2em;
     /*text-align: justify;*/
-}
-
-.article-content {
-    max-width: 50em;
 }
 
 .article-content p,
@@ -265,6 +262,20 @@ div.recent-posts p {
 
 .article-content dt {
     font-size: inherit;
+}
+
+.article-content details {
+    margin: 10px 0 10px 10px;
+}
+
+.article-content details[open] {
+    border-bottom: 1px solid #333;
+}
+
+.article-content details[open] summary {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
 }
 
 .article-content h1,

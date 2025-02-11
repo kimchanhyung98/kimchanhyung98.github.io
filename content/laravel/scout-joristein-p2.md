@@ -1,4 +1,4 @@
-Title: Scout: drivers
+Title: Laravel Scout: drivers
 Subtitle: [번역] Why do we even need Laravel Scout?
 Category: laravel
 Date: 2023-03-10 00:00

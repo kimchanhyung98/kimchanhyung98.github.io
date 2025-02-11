@@ -1,5 +1,5 @@
-Title: Scramble
-Subtitle: Laravel OpenAPI Documentation Generator
+Title: Laravel Scramble
+Subtitle: 라라벨 OpenAPI 문서 자동 생성기
 Category: laravel
 Date: 2024-04-02 00:00
 Tags: scramble, openapi, swagger

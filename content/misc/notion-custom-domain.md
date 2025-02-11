@@ -6,13 +6,13 @@ Tags: notion, cloudflare, domain, worker
 
 ## 노션 커스텀 도메인 설정
 
-노션 커스텀 도메인을 설정할 때, 클라우드플레어를 사용하는 짧고 쉬운 가이드를 찾기 힘들어 간단하게 정리하였다.
+노션 커스텀 도메인을 설정할 때, 클라우드플레어를 사용하는 짧고 쉬운 가이드를 찾기 힘들어 직접 정리해보았다.  
 
 ![notion-publish]({static}/images/notion-publish.png)  
-우선 노션 페이지를 공개(게시) 처리하고
+우선 노션 페이지를 공개(게시) 처리하고  
 
 ![cloudflare-dns]({static}/images/notion-cloudflare-dns.png)  
-클라우드플레어에서 DNS(CNAME) 추가 후, Worker를 생성한다.
+클라우드플레어에서 DNS(CNAME) 추가 후, Worker를 생성한다.  
 
 ```javascript
 // notion-worker
@@ -88,7 +88,7 @@ async function fetchAndApply(request) {
 ```
 
 ![cloudflare-worker]({static}/images/notion-cloudflare-worker.png)  
-이제 설정한 도메인과 notion-worker를 등록하면, 해당 도메인으로 접속이 가능하다.
+이제 설정한 도메인과 notion-worker를 등록하면, 해당 도메인으로 접속이 가능하다.  
 
 ## 기타
 

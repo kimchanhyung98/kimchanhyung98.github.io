@@ -1,5 +1,5 @@
-Title: Scout
-Subtitle: adding full-text search to Eloquent models
+Title: Laravel Scout
+Subtitle: Eloquent 모델에 전체 텍스트 검색 추가
 Category: laravel
 Date: 2023-03-01 00:00
 Tags: scout, search, algolia

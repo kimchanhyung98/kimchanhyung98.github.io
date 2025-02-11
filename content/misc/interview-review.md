@@ -1,5 +1,5 @@
-Title: Interview Review
-Subtitle: PHP 백엔드 개발자 면접 후기
+Title: PHP developer interview review
+Subtitle: PHP 백엔드 개발자 면접 후기 및 질문 정리
 Category: misc
 Date: 2024-08-20 00:00
 Tags: company, employment, interview, job
