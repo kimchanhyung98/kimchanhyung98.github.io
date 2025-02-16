@@ -1,4 +1,4 @@
-Title: Anti Malware Testfile
+Title: EICAR Testfile
 Subtitle: [번역] Anatomy of the EICAR Antivirus Test File.
 Category: misc
 Date: 2024-10-30 00:00
@@ -8,9 +8,11 @@ Tags: eicar, antivirus, anti-malware
 
 - [Anatomy of the EICAR Antivirus Test File.](https://blog.nintechnet.com/anatomy-of-the-eicar-antivirus-test-file/){:
   target="_blank"}
-- [kimchanhyung98/eicar-test-files](https://github.com/kimchanhyung98/eicar-test-files){:target="_blank"}
-    - EICAR 테스트 파일은 안티바이러스 프로그램의 정상 작동 여부를 확인하기 위한 68바이트 크기의 16비트 DOS COM 프로그램입니다. 
+- [kimchanhyung98/eicar-test-files](https://github.com/kimchanhyung98/eicar-testfile){:target="_blank"}
+    - [EICAR 테스트 파일](https://www.eicar.org/download-anti-malware-testfile/){:target="_blank"}은
+      안티바이러스 프로그램의 정상 작동 여부를 확인하기 위한 68바이트 크기의 16비트 DOS COM 프로그램입니다.
     - 안티바이러스 소프트웨어의 검증(보안 솔루션의 테스트 및 검출)을 목적으로 만들어졌으며, 위험한 코드가 포함되어 있지 않습니다.
+    - EICAR Anti-Virus(AV) Test File, EICAR Anti Malware Testfile, EICAR Testfile 등으로 불립니다.
 
 ---
 
@@ -22,11 +24,11 @@ Tags: eicar, antivirus, anti-malware
 178.137.xx.xx POST /index.php - EICAR Standard Anti-Virus Test File blocked - [favico.gif, 68 bytes]
 ```
 
-이 메시지는 누군가가 EICAR 안티바이러스 테스트 파일(favico.gif)을 업로드하려 시도했고, NinjaFirewall이 이 시도를 차단했음을 나타냅니다.  
-문제 제기를 받고 고객에게 EICAR AV 테스트 파일에 대한 공식 페이지를 안내하였으나,
+이 메시지는 누군가가 EICAR 테스트 파일(favico.gif)을 업로드하려 시도했고, NinjaFirewall이 이 시도를 차단했음을 나타냅니다.  
+문제 제기를 받고 고객에게 EICAR 테스트 파일에 대한 공식 페이지를 안내하였으나,
 고객은 **"어떻게 68개의 문자들이 모여서 프로그램이 되고, 화면에 메시지를 출력할 수 있느냐?"**고 추가로 질문했습니다.
 
-EICAR 안티 바이러스 테스트 파일은 아래와 같이 단순한 68개의 문자로 구성되어 있습니다.
+EICAR 테스트 파일은 아래와 같이 단순한 68개의 문자로 구성되어 있습니다.
 
 ```plaintext
 X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
@@ -45,7 +47,7 @@ X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
 
 ## 디스어셈블리 목록
 
-EICAR AV 테스트 파일을 디스어셈블러에 로드하면 다음과 같은 코드 목록이 생성됩니다.
+EICAR 테스트 파일을 디스어셈블러에 로드하면 다음과 같은 코드 목록이 생성됩니다.
 
 - 첫 번째 열: 현재 세그먼트:오프셋(메모리 주소)
 - 두 번째 열: 프로그램 오퍼코드(opcode)
@@ -93,44 +95,49 @@ EICAR AV 테스트 파일을 디스어셈블러에 로드하면 다음과 같은
 
 ## 코드 분석
 
-첫 번째 명령어는 스택(ss:[sp])에서 2 바이트를 꺼내(ax 레지스터로 pop)옵니다.
+첫 번째 명령어는 스택(`ss:[sp]`)에서 2 바이트를 꺼내(`ax` 레지스터로 pop)옵니다.
+<!-- This first instruction pops two bytes from the stack pointer, `ss:[sp]`, into the ax register: -->
 
 ```shell
 0001:0100 58       pop ax
 ```
 
-스택이 비어 있으므로 ax는 0이 됩니다.   
-이는 mov ax, 0 또는 좀 더 빠르고 우아한 xor ax, ax와 같은 효과를 냅니다.  
+스택이 비어 있으므로 `ax`는 초기화(결과적으로 0으로 설정) 됩니다.   
+이는 `mov ax, 0` 또는 좀 더 빠르고 우아한 `xor ax, ax`와 같은 효과를 냅니다.
+<!-- Because it is empty, it simply clears `ax`. This is equivalent to instructions such as `mov ax, 0` or the faster (and more elegant) `xor ax, ax`. -->
 
-다음으로, ax와 214Fh를 XOR 연산하여 마스크를 만듭니다:
+다음으로, ax와 214Fh를 사용하여 XOR mask를 만듭니다:
+<!-- It makes a XOR mask with ax and 214Fh: -->
 
 ```shell
 0001:0101 354F21   xor ax, 214Fh
 ```
 
-ax가 0이었으므로, 이제 ax는 214Fh가 됩니다.
+> 'XOR 마스크를 만든다'는 것은 214Fh라는 상수를 사용하여, ax의 특정 비트들만 선택적으로 반전시키기 위한 기준(패턴)을 설정한다는 의미입니다.  
+> 즉, 214Fh에서 1로 설정된 비트 위치에 해당하는 ax의 비트들만 XOR 연산을 통해 토글되어, 원하는 비트 조작을 할 수 있게 해주는 역할을 합니다.
+
+`ax`가 비어 있었기 때문에, 이제 `ax`의 값은 214Fh가 됩니다.
+<!-- Because `ax` was empty, it will be equal to 214Fh now. -->
+
 이 값을 스택에 저장합니다:
+<!-- It is saved on the stack: -->
 
 ```shell
 0001:0104 50       push ax
 ```
 
-이후, ax(현재 214Fh)와 4140h를 AND 연산합니다:
+`ax`(현재 값 214Fh)와 4140h를 사용하여 AND mask를 만듭니다:
+<!-- It makes a AND mask with `ax` (214Fh) and 4140h: -->
 
 ```shell
 0001:0105 254041   and ax, 4140h
 ```
 
-마스크를 만들기 위해 두 값을 2진수로 표현하면:
+> 이 명령어는 현재 ax의 값(214Fh)와 상수 4140h를 AND 연산하여, 두 값에서 모두 1인 비트 위치만 1로 남기고 나머지는 0으로 만드는 역할을 합니다.  
+> 즉, 4140h에 지정된 비트만 ax에 그대로 남기고, 나머지 비트들은 0으로 만들어 특정 비트들만 선택적으로 필터링합니다.
 
-214Fh:0010 0001 0100 1111
-4140h:0100 0001 0100 0000
-
----
-AND 결과:0000 0001 0100 0000 → 140h
-
-새로운 ax의 값은 140h입니다.
-주의: 이 값은 EICAR 문자열 데이터 이후 첫 번째 바이트의 오프셋 주소임을 나타냅니다.
+마스크를 만들기 위해 두 값을 이진수로 나타내면:
+<!-- To make a mask, we convert both values to their binary notation: -->
 
 ```shell
 214Fh: 0010000101001111
@@ -139,9 +146,17 @@ AND 결과:0000 0001 0100 0000 → 140h
 AND    0000000101000000 => 140h
 ```
 
-ax새로운 값은 이제 140h입니다. 이것은 EICAR 문자열 데이터 다음에 오는 첫 번째 바이트의 오프셋 주소 라는 점에 유의하세요.
+`ax`의 새 값은 이제 140h입니다.  
+EICAR 문자열 데이터 바로 뒤에 오는 첫 번째 바이트의 오프셋 주소임에 유의하세요.
+<!-- ax new value is now 140h. Note that this is the address of the offset of the first byte following the EICAR string data. -->
 
-이후, ax의 값을 스택에 저장한 후 bx로 pop합니다:
+> 이 주소를 통해 EICAR 문자열 다음의 데이터 위치를 알 수 있습니다.
+
+---
+
+@TODO : 이후, ax의 값을 스택에 저장한 후 bx로 pop합니다:
+
+<!-- The value of ax is pushed on the stack, and popped back into bx: -->
 
 ```shell
 0001:0108 50       push ax
