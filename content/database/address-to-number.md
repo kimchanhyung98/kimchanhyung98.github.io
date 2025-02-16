@@ -8,7 +8,7 @@ MySQL에서는 IP 주소를 다룰 때 유용한 함수들을 제공하며, 그 
 
 ## INET_ATON(_expr_)
 
-IPv4 네트워크 주소를 문자열로 제공하면 네트워크 바이트 순서([Big Endian](https://www.tcpschool.com/c/c_refer_endian))로 주소의 숫자 값을 나타내는 정수를 반환하고,
+IPv4 네트워크 주소를 문자열로 제공하면 네트워크 바이트 순서([Big Endian](https://www.tcpschool.com/c/c_refer_endian){:target="_blank"})로 주소의 숫자 값을 나타내는 정수를 반환하고,
 인수가 정상적이지 않거나 NULL인 경우 NULL을 반환한다.  
 
 ```shell
@@ -38,7 +38,7 @@ mysql> SELECT INET_NTOA(167773449);
 ```
 
 변환하는 방법은 정수를 8비트씩 나눠서 각 옥텟을 추출하고, 점으로 구분된 문자열로 변환하는 것이다.  
-만약 [직접 변환](https://www.digikey.kr/ko/resources/conversion-calculators/conversion-calculator-number-conversion)하겠다면, 
+만약 [직접 변환](https://www.digikey.kr/ko/resources/conversion-calculators/conversion-calculator-number-conversion){:target="_blank"}하겠다면, 
 정수를 2진수로 변환하고 8비트씩 나눠서 각 옥텟을 추출하고, 점으로 구분된 문자열로 변환한다.  
 
 ## INET6_ATON(_expr_)

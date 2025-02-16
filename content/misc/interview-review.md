@@ -54,7 +54,7 @@ Tags: company, employment, interview, job
 
 #### 지라나 컨플루언스를 왜, 어떻게 활용했나요?
 
-- [agile](https://www.atlassian.com/ko/agile)
+- [agile](https://www.atlassian.com/ko/agile){:target="_blank"}
 
 #### 애자일에 대해 가지고 있는 특별한 인사이트(생각이나 경험)가 있나요?
 
@@ -73,7 +73,7 @@ Tags: company, employment, interview, job
 #### HTTP Method나 Status Code에 관한 경험이 있나요?
 
 - Status code 관련 논의나 노후화된 시스템 문제로 GET&POST로만 처리
-- [status code decision](https://github.com/for-GET/http-decision-diagram)
+- [status code decision](https://github.com/for-GET/http-decision-diagram){:target="_blank"}
 
 #### 결제 시스템을 구현하거나 PG 연동 시, 발생했던 문제와 해결 방법을 말씀해주세요.
 
@@ -104,7 +104,7 @@ Tags: company, employment, interview, job
 #### Modern PHP와 PSR에 대해 이해하고 계신가요?
 
 - Modern PUG와 PHP THE RIGHT WAY 확인. PSR, PER 준수
-- [modern php](https://edykim.com/ko/post/comparing-paleolithic-php-with-modern-php/)
+- [modern php](https://edykim.com/ko/post/comparing-paleolithic-php-with-modern-php/){:target="_blank"}
 
 #### Xdebug 같은 디버깅 도구를 사용하신 경험이 있으신가요? 사용하신다면 어떤 방식으로 사용하셨나요?
 
@@ -114,18 +114,18 @@ Tags: company, employment, interview, job
 
 #### Eloquent ORM에 대해 알고 계신 내용을 자유롭게 설명해주세요.
 
-- [효과적인 Eloquent](https://velog.io/@seunghaekim/%ED%9A%A8%EA%B3%BC%EC%A0%81%EC%9D%B8-Eloquent)
+- [효과적인 Eloquent](https://velog.io/@seunghaekim/%ED%9A%A8%EA%B3%BC%EC%A0%81%EC%9D%B8-Eloquent){:target="_blank"}
 
 #### ORM과 Query Builder를 사용해 보셨다면, 차이점과 사용 경험을 말씀해주세요.
 
 - ORM은 생산성을 위해 간결하게 처리. Query Builder는 대규모 데이터나 성능 최적화가 필요한 경우 사용
-- [ORM vs Query Builder](https://medium.com/@andreelm/eloquent-orm-vs-query-builder-in-laravel-47f104452644
+- [ORM vs Query Builder](https://medium.com/@andreelm/eloquent-orm-vs-query-builder-in-laravel-47f104452644){:target="_blank"}
 
 #### Mutator와 Accessor를 사용하신 경험이 있나요?
 
 - 날짜 형식, 타입이나 암호화된 데이터 핸들링 사용 경험
-- [accessors-and-mutators](https://medium.com/@lordNeic/did-you-know-about-laravel-model-accessors-and-mutators-3de69ba376fd)
-- [getters and setters](https://colabear754.tistory.com/173)
+- [accessors-and-mutators](https://medium.com/@lordNeic/did-you-know-about-laravel-model-accessors-and-mutators-3de69ba376fd){:target="_blank"}
+- [getters and setters](https://colabear754.tistory.com/173){:target="_blank"}
 
 #### Eager Loading과 Lazy Loading의 차이점과 사용하며 겪었던 문제를 말씀해주세요.
 
@@ -142,7 +142,7 @@ Tags: company, employment, interview, job
 #### 데이터베이스 성능을 개선하거나 최적화한 경험이 있으신가요?
 
 - 트래픽 증가로 인해 인덱스, 쿼리 최적화, 캐싱 등을 활용
-- [cloudflare hit ratio](https://www.cloudflare.com/ko-kr/learning/cdn/what-is-a-cache-hit-ratio/) , [aws CF](https://docs.aws.amazon.com/ko_kr/AmazonCloudFront/latest/DeveloperGuide/cache-hit-ratio.html)
+- [cloudflare hit ratio](https://www.cloudflare.com/ko-kr/learning/cdn/what-is-a-cache-hit-ratio/){:target="_blank"} , [aws CF](https://docs.aws.amazon.com/ko_kr/AmazonCloudFront/latest/DeveloperGuide/cache-hit-ratio.html){:target="_blank"}
 
 #### 인덱스를 어떻게 활용하셨고, 문제점이나 사용하면서 느낀 장단점이 무엇인지 궁금합니다.
 
@@ -168,8 +168,8 @@ Tags: company, employment, interview, job
 
 #### Rebase와 Revert의 차이점은 무엇이고, 사용해 본 경험이 있나요?
 
-- [git](https://geekflare.com/dev/git-reset-vs-revert-vs-rebase/)
-- [options](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard)
+- [git](https://geekflare.com/dev/git-reset-vs-revert-vs-rebase/){:target="_blank"}
+- [options](https://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard){:target="_blank"}
 
 ### Server (AWS)
 
@@ -184,15 +184,15 @@ Tags: company, employment, interview, job
 #### Kafka나 Pub/Sub에 대해 알고 계신가요?
 
 - 토픽, 파티션, 컨슈머 등의 개념을 확인
-- [kafka](https://cloud.google.com/learn/what-is-apache-kafka?hl=ko) , [kafka 활용](https://techblog.woowahan.com/17386/)
-- [pubsub](https://cloud.google.com/pubsub/docs/overview?hl=ko) , [kakao pubsub](https://docs.kakaocloud.com/service/analytics/pub-sub/pub-sub-overview)
+- [kafka](https://cloud.google.com/learn/what-is-apache-kafka?hl=ko){:target="_blank"} , [kafka 활용](https://techblog.woowahan.com/17386/){:target="_blank"}
+- [pubsub](https://cloud.google.com/pubsub/docs/overview?hl=ko){:target="_blank"} , [kakao pubsub](https://docs.kakaocloud.com/service/analytics/pub-sub/pub-sub-overview){:target="_blank"}
 
 #### AWS의 어떤 서비스들을 사용해 보셨나요?
 
 #### Elastic Beanstalk과 Lightsail의 차이점을 설명해주세요.
 
-- [Lightsail](https://youtu.be/WODr_GPLoFI)은 소규모 프로젝트를 위한 간단한 클라우드 서버 환경 제공
-- [EB](https://youtu.be/AfRnvsRxZ_0)는 애플리케이션 배포 자동화, 스케일링 및 로드밸런싱 지원
+- [Lightsail](https://youtu.be/WODr_GPLoFI){:target="_blank"}은 소규모 프로젝트를 위한 간단한 클라우드 서버 환경 제공
+- [EB](https://youtu.be/AfRnvsRxZ_0){:target="_blank"}는 애플리케이션 배포 자동화, 스케일링 및 로드밸런싱 지원
 
 #### Elastic Beanstalk 배포 방법이나 과정을 설명해주세요.
 
@@ -201,13 +201,13 @@ Tags: company, employment, interview, job
 #### 개발 환경 설정이나 배포를 어떻게 진행했는지 말씀해주세요.
 
 - docker, docker-compose와 Laravel Sail 사용
-- [docker&container](https://aws.amazon.com/ko/compare/the-difference-between-docker-images-and-containers/)
+- [docker&container](https://aws.amazon.com/ko/compare/the-difference-between-docker-images-and-containers/){:target="_blank"}
 
 #### VPC 설정은 어떻게 하셨나요?
 
 - 퍼블릭 서브넷에 ALB 및 NAT Gateway 설정, 프라이빗 서브넷에 RDS 및 내부 서비스 배치
-- [NAT](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-nat-comparison.html) , [VPC](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-example-private-subnets-nat.html)
-- [LB](https://aws.amazon.com/ko/compare/the-difference-between-the-difference-between-application-network-and-gateway-load-balancing/) , [VPC에서 EB 사용](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/vpc.html)
+- [NAT](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-nat-comparison.html){:target="_blank"} , [VPC](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-example-private-subnets-nat.html){:target="_blank"}
+- [LB](https://aws.amazon.com/ko/compare/the-difference-between-the-difference-between-application-network-and-gateway-load-balancing/){:target="_blank"} , [VPC에서 EB 사용](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/vpc.html){:target="_blank"}
 
 #### CI/CD 경험과 본인 만의 노하우가 있다면 공유해주세요.
 
@@ -218,8 +218,8 @@ Tags: company, employment, interview, job
 
 #### linkedin, collaborative articles
 
-- [Computer Science](https://www.linkedin.com/pulse/topics/engineering-s166/computer-science-s1541/) 
-- [Programming](https://www.linkedin.com/pulse/topics/engineering-s166/programming-s698/)
-- [Software Engineering](https://www.linkedin.com/pulse/topics/engineering-s166/software-development-s602/)
-- [Web Development](https://www.linkedin.com/pulse/topics/engineering-s166/web-development-s764/)
-- [AI](https://www.linkedin.com/pulse/topics/engineering-s166/artificial-intelligence-(ai)-s2407/)
+- [Computer Science](https://www.linkedin.com/pulse/topics/engineering-s166/computer-science-s1541/){:target="_blank"}
+- [Programming](https://www.linkedin.com/pulse/topics/engineering-s166/programming-s698/){:target="_blank"}
+- [Software Engineering](https://www.linkedin.com/pulse/topics/engineering-s166/software-development-s602/){:target="_blank"}
+- [Web Development](https://www.linkedin.com/pulse/topics/engineering-s166/web-development-s764/){:target="_blank"}
+- [AI](https://www.linkedin.com/pulse/topics/engineering-s166/artificial-intelligence-(ai)-s2407/){:target="_blank"}

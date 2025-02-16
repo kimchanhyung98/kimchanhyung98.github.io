@@ -10,7 +10,7 @@ Tags: request, http, laravel
 'Illuminate\Http\Request 인스턴스는 애플리케이션에 유입되는 HTTP 요청을 검사하기 위해,
 다양한 메소드를 제공하고 Symfony\Component\HttpFoundation\Request 클래스를 상속한다'는 정도.
 
-([API 문서](https://laravel.com/api/master/Illuminate/Http/Request.html)를 확인하면
+([API 문서](https://laravel.com/api/master/Illuminate/Http/Request.html){:target="_blank"}를 확인하면
 docs보다는 자세하게 Request 클래스의 메소드와 속성을 확인할 수 있고, View source를 통해 코드를 확인할 수 있다.)  
 
 관련 코드를 순서대로 확인해보고, 임의의 입력과 로그를 추가하여 Request 처리 과정을 확인해보았다.  
@@ -194,7 +194,7 @@ trait InteractsWithContentTypes
 getInputSource 메소드에서 header('CONTENT_TYPE') json을 확인하고, (json으로 보냈으니) json 메소드를 호출하는 것을 알 수 있다.
 (만약, GET, HEAD 메소드라면 query를 반환하고, 그 외에는 request를 반환한다)
 
-### [Source](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Request.php)
+### [Source](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Request.php){:target="_blank"}
 
 불필요하지만 라이프사이클 확인하면서, input이나 query를 어떻게 가져오는지 확인해보았다.
 
