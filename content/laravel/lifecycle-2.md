@@ -2,20 +2,20 @@ Title: Laravel HTTP Request
 Subtitle: Illuminate/Http/Request 확인하기
 Category: laravel
 Date: 2024-05-02 00:00
+Tags: request, http, laravel
 
-## Details
+## Introduction
 
 [Lifecycle](https://chanhyung.kim/w/laravel-lifecycle)을 확인해 보았으나, Request 클래스에 대한 자세한 내용은 없다.  
 'Illuminate\Http\Request 인스턴스는 애플리케이션에 유입되는 HTTP 요청을 검사하기 위해,
 다양한 메소드를 제공하고 Symfony\Component\HttpFoundation\Request 클래스를 상속한다'는 정도.
 
-- API 문서를 확인하면 docs보다는 자세하게 Request 클래스의 메소드와 속성을 확인할 수 있고, View source를 통해 코드를 확인할 수 있다.
-    - [laravel api](https://laravel.com/api/master/Illuminate/Http/Request.html)
-- 프로젝트를 진행한다면 실제 경로는 vendor/laravel/framework/src/Illuminate/Http/Request.php
+([API 문서](https://laravel.com/api/master/Illuminate/Http/Request.html){:target="_blank"}를 확인하면
+docs보다는 자세하게 Request 클래스의 메소드와 속성을 확인할 수 있고, View source를 통해 코드를 확인할 수 있다.)  
 
-### [Source](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Request.php)
+관련 코드를 순서대로 확인해보고, 임의의 입력과 로그를 추가하여 Request 처리 과정을 확인해보았다.  
 
-```http request
+```http
 POST http://localhost/test-api?name=테스트1&nickname=tester1&email=tester1@example.com&password=Password1!@
 Content-Type: application/json
 
@@ -27,7 +27,176 @@ Content-Type: application/json
 }
 ```
 
-관련 코드를 순서대로 확인해보고, 임의의 입력과 로그를 추가하여 Request 처리 과정을 확인해보자.
+### HTTP Request
+
+request에서 값을 가져올 때, 어떤 메소드가 사용되고 어떤 값을 우선적으로 가져올까?
+
+- `$request->name`
+- `$request->all()`
+
+이 두 가지 메소드를 확인해보자.  
+
+<details>
+<summary>input 이나 query 메소드는 당연히 해당 값들을 가져온다</summary>
+
+```php
+// $request->input()
+array (
+  'name' => '테스트2',
+  'nickname' => 'tester2',
+  'email' => 'tester2@example.com',
+  'password' => 'Password2@#',
+)
+
+// $request->input('name')
+테스트2
+
+```
+
+```php
+// $request->query()
+array (
+  'name' => '테스트1',
+  'nickname' => 'tester1',
+  'email' => 'tester1@example.com',
+  'password' => 'Password1!@',
+)  
+
+// $request->query('name')
+테스트1
+
+```
+
+</details>
+
+#### $request->name
+
+```php
+/**
+ * Get an input element from the request.
+ *
+ * @param  string  $key
+ * @return mixed
+ */
+public function __get($key)
+{
+    return Arr::get($this->all(), $key, function () use ($key) {
+        return $this->route($key);
+    });
+}
+
+```
+
+우선 전체 input을 가져오고, 해당 값을 가져오는 것을 확인할 수 있다.  
+(`$request->name`을 호출(`__get` 메소드)하면, `$request->all()`을 호출하고, key에 해당하는 값을 가져온다)  
+
+#### $request->all()
+
+```php
+/**
+ * Get all of the input and files for the request.
+ *
+ * @param  array|mixed|null  $keys
+ * @return array
+ */
+public function all($keys = null)
+{
+    $input = array_replace_recursive($this->input(), $this->allFiles());
+
+    if (! $keys) {
+        return $input;
+    }
+
+    $results = [];
+
+    foreach (is_array($keys) ? $keys : func_get_args() as $key) {
+        Arr::set($results, $key, Arr::get($input, $key));
+    }
+
+    return $results;
+}
+
+```
+
+`$request->all()`을 호출하면, `$request->input()`과 `$request->allFiles()`를 합쳐서 반환한다.  
+
+```php
+/**
+ * Retrieve an input item from the request.
+ *
+ * @param  string|null  $key
+ * @param  mixed  $default
+ * @return mixed
+ */
+public function input($key = null, $default = null)
+{
+    return data_get(
+        $this->getInputSource()->all() + $this->query->all(), $key, $default
+    );
+}
+
+```
+
+input 메소드는 `$request->getInputSource()->all()`과 `$request->query->all()`을 합쳐서 반환하고,
+`$request->getInputSource()->all()`은 `$request->query`와 `$request->request`를 반환한다.  
+
+```php
+/**
+ * Request body parameters ($_POST).
+ *
+ * @var InputBag|ParameterBag
+ */
+public $request;
+
+/**
+ * Query string parameters ($_GET).
+ *
+ * @var InputBag
+ */
+public $query;
+
+...
+
+/**
+ * Get the input source for the request.
+ *
+ * @return \Symfony\Component\HttpFoundation\ParameterBag
+ */
+protected function getInputSource()
+{
+    if ($this->isJson()) {
+        return $this->json();
+    }
+
+    return in_array($this->getRealMethod(), ['GET', 'HEAD']) ? $this->query : $this->request;
+}
+
+```
+
+```php
+[Illuminate/Http/Concerns/InteractsWithContentTypes.php]
+
+trait InteractsWithContentTypes
+{
+    /**
+     * Determine if the request is sending JSON.
+     *
+     * @return bool
+     */
+    public function isJson()
+    {
+        return Str::contains($this->header('CONTENT_TYPE') ?? '', ['/json', '+json']);
+    }
+    ...
+
+```
+
+getInputSource 메소드에서 header('CONTENT_TYPE') json을 확인하고, (json으로 보냈으니) json 메소드를 호출하는 것을 알 수 있다.
+(만약, GET, HEAD 메소드라면 query를 반환하고, 그 외에는 request를 반환한다)
+
+### [Source](https://github.com/laravel/framework/blob/master/src/Illuminate/Http/Request.php){:target="_blank"}
+
+불필요하지만 라이프사이클 확인하면서, input이나 query를 어떻게 가져오는지 확인해보았다.
 
 ```php
 [public/index.php]
@@ -106,6 +275,7 @@ public static function createFromGlobals(): static
 ```
 
 <!-- trace: Illuminate/Http/Request.php → symfony/http-foundation/Request.php : createFromGlobals() (here) -->
+
 이어서 enableHttpMethodParameterOverride를 확인하고 SymfonyRequest의 createFromGlobals도 확인
 
 <details>
@@ -227,7 +397,7 @@ Symfony\Component\HttpFoundation\Request {#34
 }
 ```
 
-</details>
+</details>  
 
 ```php
 [Illuminate/Http/Request.php]
@@ -275,7 +445,7 @@ Symfony\Component\HttpFoundation\InputBag {#35
 }
 ```
 
-</details>
+</details>  
 
 <details>
 <summary>Illuminate/Http/Request.php → dump 2st log</summary>
@@ -296,7 +466,7 @@ public function isJson()
 }
 ```
 
-</details>
+</details>  
 
 ```php
 [Illuminate/Foundation/Application.php]
@@ -319,8 +489,8 @@ public function handleRequest(Request $request)
 }
 ```
 
-Request::capture()가 생성한 Symfony\Component\HttpFoundation\Request 인스턴스를 handleRequest 메소드로 전달  
-해당 값(request)을 전달받은 handleRequest는 body, param 값이 모두 있는 것도 확인
+Request::capture()가 생성한 Symfony\Component\HttpFoundation\Request 인스턴스를 handleRequest 메소드로 전달하고
+해당 값(request)을 전달받아 handleRequest는 body, param 값이 모두 있는 것도 확인
 
 <details>
 <summary>Illuminate/Foundation/Application.php → dump handleRequest</summary>
@@ -457,9 +627,10 @@ Illuminate\Http\Request {#42
 }
 ```
 
-</details>
+</details>  
 
-## Summary
+### Summary
 
-- Laravel lifecycle과 실제 Request 처리 과정을 확인
-- createFromBase 메소드를 확인하여 Request의 body, param 및 처리 과정을 확인
+- [이전 게시글](https://chanhyung.kim/w/laravel-lifecycle)에서 Laravel lifecycle, 이번 게시물에서 실제 Request 처리 과정을 확인
+- 최초(createFromGlobals)에는 query 값만 존재하고, capture → createFromBase를 거치면서 body 값이 추가
+- $request->name을 했을 때, $request->all()을 호출하고, key에 해당하는 값을 가져오고 json이 우선적으로 처리된다.

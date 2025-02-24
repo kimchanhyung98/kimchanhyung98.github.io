@@ -2,13 +2,13 @@ import os
 
 # Defaults
 if os.environ.get("CONTEXT") == "production":
-    SITEURL = 'https://kimchanhyung98.github.io'
+    SITEURL = 'https://chanhyung.kim'
 else:
     SITEURL = 'http://localhost:8000'
 
 AUTHOR = 'kimchanhyung98'
-SITENAME = 'kimchanhyung98'
-SITESUBTITLE = 'kimchanhyung blog'
+SITENAME = 'Chandlery'
+SITESUBTITLE = 'chanhyung.kim'
 
 DEFAULT_CATEGORY = 'misc'
 USE_FOLDER_AS_CATEGORY = False
@@ -70,8 +70,8 @@ TRANSLATION_FEED_ATOM = None
 
 # Social
 SOCIAL = (
-    ('Contact', 'https://chanhyung.kim'),
-    ('Github', 'https://github.com/kimchanhyung98', 'Github Profile'),
+    ('gitHub', 'https://github.com/kimchanhyung98'),
+    ('linkedin', 'https://www.linkedin.com/in/kimchanhyung98'),
 )
 
 LINKS = (

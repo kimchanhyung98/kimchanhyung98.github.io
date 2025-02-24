@@ -1,12 +1,12 @@
-Title: Scout: drivers
+Title: Laravel Scout: drivers
 Subtitle: [번역] Why do we even need Laravel Scout?
 Category: laravel
 Date: 2023-03-10 00:00
+Tags: scout, search, algolia
 
-@joristein 게시글 번역 및 내용 정리
+joristein@[Laravel Scout P2: drivers & limitations](https://medium.com/@joristein/laravel-scout-full-text-search-p2-limitations-drivers-builder-46aef7f03cf5){:target="_blank"} 게시글 번역 및 내용 정리
 
-- [Laravel Scout P2: drivers & limitations](https://medium.com/@joristein/laravel-scout-full-text-search-p2-limitations-drivers-builder-46aef7f03cf5){:target="_blank"}
-    - [Elastic Search는 별도](https://laravel-news.com/explorer){:target="_blank"}
+- [Elastic Search는 별도](https://laravel-news.com/explorer){:target="_blank"}
 
 ---
 

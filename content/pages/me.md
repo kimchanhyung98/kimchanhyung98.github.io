@@ -1,6 +1,5 @@
 Title: me
 Subtitle: 소개글
-Date: 2024-09-01 10:00
 
 ## 소개
 

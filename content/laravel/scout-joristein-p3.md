@@ -1,11 +1,11 @@
-Title: Scout: combining search, filter
+Title: Laravel Scout: combining search, filter
 Subtitle: [번역] Filtering data with Search engine&Eloquent
 Category: laravel
 Date: 2023-03-11 00:00
+Tags: scout, search, filter, eloquent
 
-@joristein 게시글 번역 및 내용 정리
+joristein@[Laravel Scout P3: combining search, filter and ordering](https://medium.com/@joristein/part-3-laravel-scout-full-text-search-p3-combining-search-filter-and-ordering-f7a0c5558f3f){:target="_blank"} 게시글 번역 및 내용 정리
 
-- [Laravel Scout P3: combining search, filter and ordering](https://medium.com/@joristein/part-3-laravel-scout-full-text-search-p3-combining-search-filter-and-ordering-f7a0c5558f3f){:target="_blank"}
 - [Pagination with subquery broken](https://github.com/laravel/scout/issues/450){:target="_blank"}
 
 ---
