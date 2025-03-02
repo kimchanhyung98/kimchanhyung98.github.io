@@ -16,14 +16,23 @@ Blueprint와 Test Assertions 패키지를 설치하고, `.gitignore`에 `.bluepr
 
 ```shell
 composer require -W --dev laravel-shift/blueprint
+composer require --dev jasonmccreary/laravel-test-assertions  # optional
 
-composer require --dev jasonmccreary/laravel-test-assertions
-
-# echo '/draft.yaml' >> .gitignore
 echo '/.blueprint' >> .gitignore
 ```
 
 ### [Components](https://blueprint.laravelshift.com/docs/generating-components/){:target="_blank"}
+
+- `blueprint:new` 명령어로 yaml 파일을 생성하고, 간단하게 모델과 컨트롤러를 정의한다.
+- `blueprint:build` [명령어](https://blueprint.laravelshift.com/docs/available-commands/){:target="_blank"}로 코드를 생성하고,
+  `blueprint:erase`으로 생성된 파일들을 제거할 수 있다.
+- 커스텀을 위해 stub을 게시하려면 `blueprint:stubs` , 수정사항 추적이 필요하다면 `blueprint:trace` 명령어를 사용한다.
+
+---
+
+`blueprint:build` 명령어로 코드를 생성하고, 간단한 예시 파일을 작성해보자.
+
+```shell
 
 ```yaml
 # [draft.yaml]
@@ -62,12 +71,83 @@ controllers:
 
 ```
 
-- `blueprint:new` 명령어로 yaml 파일을 생성하고, 간단하게 모델과 컨트롤러를 정의한다.
-- `blueprint:build` [명령어](https://blueprint.laravelshift.com/docs/available-commands/){:target="_blank"}로 코드를 생성하고
-  `blueprint:erase`으로 생성된 파일들을 제거할 수 있다.
-- 커스텀을 위해 stub을 게시하려면 `blueprint:stubs` , 수정사항 추적이 필요하다면 `blueprint:trace` 명령어를 사용한다.
-
 ### [Models](https://blueprint.laravelshift.com/docs/defining-models/){:target="_blank"}
+
+#### 모델 정의하기
+
+Blueprint에서는 YAML 파일을 사용하여 데이터베이스 모델을 정의할 수 있습니다. 모델 정의는 **models** 섹션에서 이루어지며, 각 모델의 필드와 속성을 명확하게 기술할 수 있습니다. 이를 통해 모델,
+마이그레이션, 팩토리, 시더 등의 코드 초안을 자동으로 생성할 수 있습니다.
+
+#### 모델 데이터 타입
+
+Blueprint는 다양한 데이터 타입을 지원하여 모델 필드를 유연하게 정의할 수 있습니다. 데이터 타입을 정확하게 지정함으로써 데이터베이스 구조를 체계적으로 설계할 수 있습니다.
+
+### 지원되는 주요 데이터 타입
+
+- **기본 타입**
+    - `string`: VARCHAR 타입. 기본 길이는 255이며, 길이를 지정할 수 있습니다.
+    - `text`: TEXT 타입.
+    - `integer`: INTEGER 타입.
+    - `bigInteger`: BIGINT 타입.
+    - `boolean`: BOOLEAN 타입.
+    - `timestamp`: TIMESTAMP 타입.
+    - `date`: DATE 타입.
+    - `time`: TIME 타입.
+    - `float`: FLOAT 타입.
+    - `double`: DOUBLE 타입.
+    - `decimal`: DECIMAL 타입.
+
+- **특수 타입**
+    - `uuid`: UUID 타입.
+    - `json`: JSON 타입.
+    - `enum`: ENUM 타입. 열거형 값을 정의할 수 있습니다.
+
+#### 키와 인덱스 설정
+
+Blueprint를 사용하면 모델의 키(Primary Key)와 인덱스(Index)를 손쉽게 정의할 수 있습니다. 키와 인덱스를 적절하게 설정함으로써 데이터베이스 성능을 최적화하고 데이터 무결성을 유지할 수
+있습니다.
+
+#### 주요 키 및 인덱스 유형
+
+- **Primary Key (주 키)**: 테이블의 고유 식별자로 사용됩니다. 기본적으로 `id` 필드가 주 키로 설정됩니다.
+- **Unique Key (고유 키)**: 특정 필드의 값이 고유하도록 제한합니다.
+- **Indexes (인덱스)**: 검색 속도를 향상시키기 위해 필드에 인덱스를 추가합니다.
+
+#### 모델 관계 설정
+
+Blueprint는 모델 간의 관계를 명확하게 정의할 수 있는 다양한 관계 설정을 지원합니다. 관계를 설정함으로써 데이터 간의 연관성을 표현하고, 이를 기반으로 Eloquent 모델의 관계 메서드를 자동으로 생성할
+수 있습니다.
+
+#### 지원되는 주요 관계 유형
+
+- **One To One**: 한 모델이 다른 모델과 일대일 관계를 가집니다.
+- **One To Many**: 한 모델이 여러 모델과 일대다 관계를 가집니다.
+- **Many To Many**: 여러 모델이 다수의 모델과 다대다 관계를 가집니다.
+- **Has Many Through**: 중간 모델을 통해 간접적으로 관계를 설정합니다.
+- **Polymorphic Relations**: 다양한 모델과의 다형적 관계를 설정합니다.
+
+#### 모델 단축 표현
+
+Blueprint는 모델 정의를 더욱 간결하게 작성할 수 있는 다양한 단축 표현(Shorthand)을 지원합니다. 단축 표현을 사용하면 코드의 가독성을 높이고, 더욱 간편하게 모델을 정의할 수 있습니다.
+
+#### 주요 단축 표현
+
+- **Field Shorthand**: 필드 타입과 옵션을 간단하게 표현할 수 있습니다.
+- **Relationship Shorthand**: 관계를 짧은 문법으로 정의할 수 있습니다.
+- **Method Chaining**: 여러 옵션을 체이닝 방식으로 연결할 수 있습니다.
+
+#### 데이터베이스 시더 생성
+
+Blueprint를 사용하면 초기 데이터베이스 시더(Database Seeders)를 간편하게 생성할 수 있습니다. 시더를 통해 테스트 데이터나 초기 데이터를 손쉽게 삽입할 수 있으며, 이를 통해 개발 및 테스트
+과정에서 효율성을 높일 수 있습니다.
+
+#### 시더 정의 방법
+
+시더는 **seeders** 섹션에서 정의하며, 각 시더는 특정 모델에 대한 데이터를 생성하는 로직을 담고 있습니다. Faker 라이브러리를 활용하여 다양한 테스트 데이터를 자동으로 생성할 수 있습니다.
+
+
+---
+
 
 Blueprint는 Laravel 애플리케이션에서 코드 생성을 자동화할 수 있도록 도와주는 도구로,
 YAML 기반의 draft 파일 하나로 모델 정의부터 데이터베이스 시더 생성까지 연관된 여러 작업을 한 번에 처리할 수 있습니다.
