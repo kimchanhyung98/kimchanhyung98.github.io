@@ -2,13 +2,13 @@ import os
 
 # Defaults
 if os.environ.get("CONTEXT") == "production":
-    SITEURL = 'https://chanhyung.kim'
+    SITEURL = 'https://example.github.io'
 else:
     SITEURL = 'http://localhost:8000'
 
-AUTHOR = 'kimchanhyung98'
-SITENAME = 'Chandlery'
-SITESUBTITLE = 'chanhyung.kim'
+AUTHOR = 'example_user'
+SITENAME = 'Example'
+SITESUBTITLE = 'example'
 
 DEFAULT_CATEGORY = 'misc'
 USE_FOLDER_AS_CATEGORY = False
@@ -69,13 +69,15 @@ FEED_ALL_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Social
+# - email, github, rss, facebook, twitter, linkedin, instagram, reddit, youtube, gmail, stackoverflow
+# - hackernews, gitlab, calendar, wire, telegram, spotify, twitch, mastodon, keybase, goodreads
 SOCIAL = (
-    ('gitHub', 'https://github.com/kimchanhyung98'),
-    ('linkedin', 'https://www.linkedin.com/in/kimchanhyung98'),
+    ('gitHub', 'https://github.com/example'),
+    # ('You can modify those links in your config file', '#'),
 )
 
 LINKS = (
-    ('GitHub', 'https://github.com/kimchanhyung98'),
+    ('GitHub', 'https://github.com/example'),
     # ('You can modify those links in your config file', '#'),
 )
 
@@ -85,14 +87,14 @@ PROJECTS_TITLE = '메모장'
 PROJECTS = [
     {
         'name': 'GitHub',
-        'url': 'https://github.com/kimchanhyung98',
-        'description': '아무것도 모른다는 것을 안다',
+        'url': 'https://github.com/example',
+        'description': 'example_description',
     }, {
         'name': 'Linkedin',
-        'url': 'https://www.linkedin.com/in/kimchanhyung98',
-        'description': '구인구직',
+        'url': 'https://www.linkedin.com/in/example',
+        'description': 'example_description',
     }
 ]
 
 UTTERANCES_FILTER = True
-COMMENTBOX_FILTER = True
+COMMENTBOX_FILTER = False

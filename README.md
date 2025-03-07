@@ -1,4 +1,4 @@
-# kimchanhyung98.github.io
+# kimchanhyung98.github.io skeleton
 
 [Pelican](https://getpelican.com) + [Github Pages](https://pages.github.com)
 
