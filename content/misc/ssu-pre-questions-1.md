@@ -1,5 +1,5 @@
-Title: SSU open source advanced design, mentoring
-Subtitle: 대학생을 위한 스마트 스터디 플래너, 기획 리뷰 및 사전 질문 정리
+Title: SSU open source advanced design, mentoring 1
+Subtitle: 대학생을 위한 스마트 스터디 플래너, 기획 리뷰 및 사전 질문 정리 1
 Category: misc
 Date: 2025-04-04 00:00
 Tags: interview, mentoring, question
