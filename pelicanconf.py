@@ -91,6 +91,10 @@ PROJECTS = [
         'name': 'Linkedin',
         'url': 'https://www.linkedin.com/in/kimchanhyung98',
         'description': '구인구직',
+    }, {
+        'name': 'Laravel Doc',
+        'url': 'https://laravel.chanhyung.kim',
+        'description': '라라벨 한국어 문서 (DIY)',
     }
 ]
 
