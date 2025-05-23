@@ -19,7 +19,7 @@ six==1.13.0
 smartypants==2.0.1
 smmap2==2.0.5
 soupsieve==1.9.5
-tornado==6.4.2
+tornado==6.5.1
 typogrify==2.0.7
 Unidecode==1.1.1
 webassets==0.12.1
